@@ -36,7 +36,7 @@ function Navbar(){
                             <a href="#PC">PC</a>
                         </li>
                         <li>
-                            <a href="#Xbox">Ofertas</a>
+                            <a href="#Xbox">Xbox</a>
                         </li>
                         <li>
                             <a href="#PlayStation">PlayStation</a>

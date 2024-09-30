@@ -1,12 +1,11 @@
 import './App.css';
-import Navbar from "./componentes/Navbar";
-import Cadastro from "./componentes/Cadastro";
+import PaginaInicio from "./PaginaInicio.js";
+
 
 function App() {
   return (
     <>
-      <Navbar/>
-      <Cadastro/>
+      <PaginaInicio/>
     </>
   );
 }
