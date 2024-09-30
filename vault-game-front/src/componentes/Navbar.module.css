@@ -155,13 +155,14 @@ header {
   display: flex;
   align-items: center;
   position: relative; /* Necessário para o dropdown */
+  max-height: 00%;
 }
 
 .loginbotao {
   cursor: pointer;
   padding-right: 20px;
   padding-left: 20px;
-  padding: 10px;
+  padding: 14%;
   font-size: 15px;
   color: purple;
   background-color: white;
@@ -185,10 +186,12 @@ header {
   padding-bottom: 0.5em;
   position: absolute;
   background-color: none;
-  width: 5.9em;
+  width: 7.1em;
   justify-content: space-between;
-  top: 3.9em;
+  top: 100%;
+  right: 0%;
   border: 0;
+  max-width: 6.9em;
   text-align: center;
   background-color: white;
   border-radius: 5px;
@@ -199,22 +202,23 @@ header {
   font-size: 1em;
   z-index: 9001;
   background-color: white;
-  border: 0;
-  color: purple;
+  border: 8px solid white;
 }
 
 .dropdown li button:hover{
   cursor: pointer;
   z-index: 9001;
-  background-color: grey;
-  border: 0;
+  width: 7.1em;
+  background-color: #EEEEEE;
+  border: 8px solid #EEEEEE;
 }
 
 .dropdown li button:active{
   cursor: pointer;
+  width: 100%;
   z-index: 9001;
-  background-color: transparent;
-  border: 0;
+  background-color: #EEEEEE;
+  border: 8px solid #EEEEEE;
 }
 
 .loginIcone:hover .dropdown {
