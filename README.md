@@ -1,36 +1,38 @@
-# ProGames - Website de Vendas Simuladas de Jogos
+Aqui está o README modificado para o nome **VaultGame**:
+
+# VaultGame - Website de Vendas Simuladas de Jogos
 
 ## Visão Geral
 
-O **ProGames** é um **Website de Vendas Simuladas de Jogos**, desenvolvido para simular o funcionamento de uma loja online de jogos, sem realizar transações financeiras reais. O projeto permite aos usuários navegar por uma lista de jogos, pesquisar por títulos e simular a compra de produtos. Este ambiente é ideal para treinamento acadêmico ou prático em desenvolvimento web utilizando tecnologias de frontend e backend modernas.
+O **VaultGame** é um **Website de Vendas Simuladas de Jogos**, projetado para simular o ambiente de uma loja virtual de jogos, sem a realização de transações financeiras reais. Este projeto oferece aos usuários a oportunidade de explorar um catálogo de jogos, realizar buscas personalizadas e simular compras de maneira prática e interativa. Ideal para fins acadêmicos e de treinamento, o **VaultGame** utiliza tecnologias de ponta para o desenvolvimento web, tanto no frontend quanto no backend.
 
 ---
 
 ## Funcionalidades do Projeto
 
-- **Catálogo de Jogos**: Apresenta uma lista de jogos para diversas plataformas como PC, Xbox, PlayStation e Nintendo.
-- **Sistema de Autenticação**: Registros e logins de usuários com alternância de visibilidade da senha para uma experiência mais amigável.
-- **Busca de Jogos**: Possibilita a busca de jogos por nome, plataforma ou gênero.
-- **Simulação de Compras**: Adição de jogos ao carrinho e simulação de um processo de checkout.
-- **Integração com API Backend**: A API, desenvolvida com **Django**, lida com a lógica de negócio, autenticação e inventário.
+- **Catálogo de Jogos**: Exibe uma seleção diversificada de jogos para plataformas como PC, Xbox, PlayStation e Nintendo.
+- **Sistema de Autenticação**: Registro e login de usuários, com opção de exibição de senha para melhorar a experiência do usuário.
+- **Busca de Jogos**: Filtragem de jogos por título, plataforma ou gênero.
+- **Simulação de Compras**: Adicione jogos ao carrinho e simule o processo de finalização de compra.
+- **Integração com API Backend**: O backend, desenvolvido em **Django**, gerencia a lógica de negócios, autenticação e inventário de jogos.
 
 ---
 
 ## Tecnologias Utilizadas
 
 ### Frontend:
-- **React**: Para criar uma interface de usuário interativa e responsiva.
-- **JavaScript**: Proporciona interatividade no site.
-- **HTML/CSS**: Estrutura e estilização do frontend.
-- **Axios**: Utilizado para realizar requisições HTTP para a API.
+- **React**: Framework utilizado para criar uma interface de usuário dinâmica e responsiva.
+- **JavaScript**: Para a implementação da interatividade no site.
+- **HTML/CSS**: Estrutura e design da interface.
+- **Axios**: Responsável por realizar as requisições HTTP à API.
 
 ### Backend:
-- **Python com Django**: Utilizado para desenvolver a API RESTful e gerenciar a lógica de backend.
-- **Django Rest Framework**: Facilita a criação da API.
-- **MySQL**: Banco de dados relacional para armazenar informações sobre os usuários, jogos e transações simuladas.
+- **Python com Django**: Framework utilizado para desenvolver a API RESTful e gerenciar a lógica de backend.
+- **Django Rest Framework**: Facilita o desenvolvimento da API.
+- **MySQL**: Banco de dados relacional utilizado para armazenar as informações de usuários, jogos e transações simuladas.
 - **Django MySQL Connector**: Utilizado para conectar o Django ao MySQL.
-- **Postman**: Para testar e depurar as requisições da API.
-- **Visual Studio Code (VS Code)**: IDE utilizada para desenvolver o backend em Python.
+- **Postman**: Para teste e depuração das rotas da API.
+- **Visual Studio Code (VS Code)**: Ambiente de desenvolvimento integrado (IDE) utilizado para codificar o backend em Python.
 
 ---
 
@@ -40,15 +42,15 @@ O **ProGames** é um **Website de Vendas Simuladas de Jogos**, desenvolvido para
 
 - **Node.js**: Necessário para rodar o frontend com React.
 - **Python**: Para rodar o backend utilizando Django.
-- **MySQL**: Para o gerenciamento do banco de dados.
-- **Pipenv** ou **virtualenv**: Para criação de ambientes virtuais Python.
-- **Postman**: Opcional, para testar as rotas da API.
+- **MySQL**: Gerenciador de banco de dados utilizado no projeto.
+- **Pipenv** ou **virtualenv**: Para a criação de ambientes virtuais Python.
+- **Postman**: Opcional, mas útil para testar as requisições da API.
 
 ### Clonar o Repositório
 
 ```bash
-git clone https://github.com/eduardotajra/progames
-cd progames
+git clone https://github.com/eduardotajra/vaultgame.git
+cd vaultgame
 ```
 
 ### Configuração do Backend
@@ -74,8 +76,8 @@ cd progames
    DATABASES = {
        'default': {
            'ENGINE': 'django.db.backends.mysql',
-           'NAME': 'progames_db',
-           'USER': 'progames_user',
+           'NAME': 'vaultgame_db',
+           'USER': 'vaultgame_user',
            'PASSWORD': 'senha_secreta',
            'HOST': 'localhost',
            'PORT': '3306',
