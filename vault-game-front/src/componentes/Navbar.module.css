@@ -90,6 +90,16 @@ header {
     width: 100%;
   }
   
+  .search img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+    left: 2vh;
+    top: 10px;
+    position: relative;
+    height: 30px;
+    width: 30px;
+
+  }
   .search img {
     opacity: 1;
     left: 2vh;
@@ -97,6 +107,7 @@ header {
     position: relative;
     height: 30px;
     width: 30px;
+
   }
   
   .search {
@@ -120,6 +131,14 @@ header {
   
   .logo img:hover {
     transform: scale(1.03);
+  }
+
+  .compras img{
+    position: relative;
+    opacity: 1;
+    width: 30px;
+    height: 30px;
+    left: 2vh;
   }
   
   /* Responsividade */
@@ -213,4 +232,37 @@ header {
       height: 35px;
     }
   }
-  
+  .login {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Necessário para o posicionamento absoluto do dropdown */
+}
+
+.loginIcone {
+    display: flex;
+    align-items: center;
+    position: relative; /* Necessário para o dropdown */
+}
+
+.loginbotao {
+    background: none; /* Para remover o fundo do botão */
+    border: none; /* Para remover a borda do botão */
+    cursor: pointer; /* Para indicar que é clicável */
+}
+
+.dropdown {
+    display: none; /* Esconde o dropdown por padrão */
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    z-index: 1;
+}
+
+.loginIcone:hover .dropdown {
+    display: block; /* Exibe o dropdown ao passar o mouse sobre o contêiner */
+}
