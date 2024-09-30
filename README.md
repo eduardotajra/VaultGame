@@ -1,5 +1,3 @@
-Aqui está o README modificado para o nome **VaultGame**:
-
 # VaultGame - Website de Vendas Simuladas de Jogos
 
 ## Visão Geral
