@@ -32,7 +32,7 @@ function Cadastro() {
       <div id="home" className={styles.home}>
         <div id="form-header" className={styles.header}>
           <button id="loginBtn" className={`${styles.botaoDiv} ${pagina === "login" ? (styles.botaoDivOn) : ""}`} onClick={() => alterarPagina("login")}>
-            {" "}Login{" "}
+            Login
           </button>
           <button id="cadastroBtn" className={`${styles.botaoDiv} ${pagina === "cadastro" ? (styles.botaoDivOn) : ""}`} onClick={() => alterarPagina("cadastro")}>
             <u>Cadastro</u> 
@@ -44,7 +44,7 @@ function Cadastro() {
           {pagina === "login" ? (
 
             <section className={styles.sessaoLogin} id="login">
-              <input type="email" id="email" placeholder="Email" required />{" "}
+              <input type="email" id="email" placeholder="Email" required />
               <br/> <br/>
 
               <div className={styles.passwordContainer}>

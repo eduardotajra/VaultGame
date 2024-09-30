@@ -93,14 +93,12 @@ header {
   .lupa:hover {
     transform: scale(1.1);
     opacity: 1;
-    /* top: 10px; */
     position: relative;
     height: 30px;
     width: 30px;
 
   }
   .lupa{
-    /* background-color: yellow; */
     opacity: 1;
     position: relative;
     width: 30px;
@@ -147,7 +145,6 @@ header {
     opacity: 1;
     width: 30px;
     height: 30px;
-    /* left: 2vh; */
   }
   
   
@@ -175,18 +172,49 @@ header {
   content: '';
 }
 
+.dropdown li {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 .dropdown {
-    padding: 2em;
-    left: 12px;
-    top: 10px;
-    list-style-type: none;
-    text-decoration: none;
-    color: black;
-    display: none;
-    position: absolute;
-    background-color: none;
-    margin-top: 10px;
-    z-index: 1;
+  z-index: 9000;
+  display: none;
+  padding: 0.7em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  position: absolute;
+  background-color: none;
+  width: 5.9em;
+  justify-content: space-between;
+  top: 3.9em;
+  border: 0;
+  text-align: center;
+  background-color: white;
+  border-radius: 5px;
+}
+
+
+.dropdown li button{
+  font-size: 1em;
+  z-index: 9001;
+  background-color: white;
+  border: 0;
+  color: purple;
+}
+
+.dropdown li button:hover{
+  cursor: pointer;
+  z-index: 9001;
+  background-color: grey;
+  border: 0;
+}
+
+.dropdown li button:active{
+  cursor: pointer;
+  z-index: 9001;
+  background-color: transparent;
+  border: 0;
 }
 
 .loginIcone:hover .dropdown {

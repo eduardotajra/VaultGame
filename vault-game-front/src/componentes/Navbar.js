@@ -5,6 +5,7 @@ import logo from "./img/logo.png";
 import lupa from "./img/lupa.png";
 import carrinho from "./img/carrinho.png";
 import login from "./img/login.png";
+import Cadastro from "./Cadastro.js"
 
 function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -18,9 +19,9 @@ function Navbar() {
     });
   }, []);
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
+  // const toggleDropdown = () => {
+  //   setIsDropdownOpen(!isDropdownOpen);
+  // };
 
   return (
     <>
@@ -70,19 +71,19 @@ function Navbar() {
             </div>
 
             <div className={styles.loginIcone}>
-              
+
               <button className={styles.loginbotao}>
                 <img src={login} alt="Logo" className="navbar-logo" />{" "}
                 <p> Entrar </p>
               </button>
 
-              <div className={`${styles.dropdown} ${isDropdownOpen ? styles.show : ""}`}>
-                <ul>
+              <div className={styles.dropdown}>
+                <ul className={styles.ulDropdown}>
                   <li>
-                    <a href="/signup">Criar Conta</a>
+                    <button href="/signup">Criar Conta</button>
                   </li>
                   <li>
-                    <a href="/login">Fazer Login</a>
+                    <button href="/login">Fazer Login</button>
                   </li>
                 </ul>
               </div>
