@@ -66,17 +66,13 @@ function Navbar() {
             </a>
           </div>
 
-          <div className={styles.login}>
+          
             <div className={styles.loginIcone}>
               <button className={styles.loginbotao}>
-                <img src={login} alt="Logo" className="navbar-logo" />
+                <img src={login} alt="Logo" className="navbar-logo" /> <p> Entrar </p>
               </button>
               {/* Mover o dropdown aqui para que seja um irmão do botão */}
-              <div
-                className={`${styles.dropdown} ${
-                  isDropdownOpen ? styles.show : ""
-                }`}
-              >
+              <div className={`${styles.dropdown} ${ isDropdownOpen ? styles.show : ""}`} >
                 <ul>
                   <li>
                     <a href="/signup">Criar Conta</a>
@@ -85,7 +81,6 @@ function Navbar() {
                     <a href="/login">Fazer Login</a>
                   </li>
                 </ul>
-              </div>
             </div>
           </div>
         </div>

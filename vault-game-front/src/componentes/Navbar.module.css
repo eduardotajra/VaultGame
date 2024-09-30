@@ -232,33 +232,40 @@ header {
       height: 35px;
     }
   }
-  .login {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative; /* Necessário para o posicionamento absoluto do dropdown */
-}
+
 
 .loginIcone {
+    cursor: pointer;
     display: flex;
     align-items: center;
     position: relative; /* Necessário para o dropdown */
 }
 
 .loginbotao {
-    background: none; /* Para remover o fundo do botão */
-    border: none; /* Para remover a borda do botão */
-    cursor: pointer; /* Para indicar que é clicável */
+    cursor: pointer;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding: 10px;
+    font-size: 15px;
+    color: purple;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.dropdown li::marker {
+  content: '';
 }
 
 .dropdown {
-    display: none; /* Esconde o dropdown por padrão */
+    padding: 2em;
+    left: 12px;
+    top: 10px;
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+    display: none;
     position: absolute;
-    background-color: white;
-    border: 1px solid #ccc;
+    background-color: none;
     margin-top: 10px;
     z-index: 1;
 }
@@ -266,3 +273,4 @@ header {
 .loginIcone:hover .dropdown {
     display: block; /* Exibe o dropdown ao passar o mouse sobre o contêiner */
 }
+
