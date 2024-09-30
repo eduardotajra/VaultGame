@@ -32,47 +32,51 @@ function Navbar() {
             </a>
           </div>
 
-          <nav className={styles.menu.desktop}>
-            <ul className={styles.menu}>
-              <li>
-                <a href="#Ofertas">Ofertas</a>
-              </li>
-              <li>
-                <a href="#PC">PC</a>
-              </li>
-              <li>
-                <a href="#Xbox">Xbox</a>
-              </li>
-              <li>
-                <a href="#PlayStation">PlayStation</a>
-              </li>
-              <li>
-                <a href="#Nintendo">Nintendo</a>
-              </li>
-            </ul>
-          </nav>
+          <div className={styles.central}>
+            <nav className={styles.menu.desktop}>
+              <ul className={styles.menu}>
+                <li>
+                  <a href="#Ofertas">Ofertas</a>
+                </li>
+                <li>
+                  <a href="#PC">PC</a>
+                </li>
+                <li>
+                  <a href="#Xbox">Xbox</a>
+                </li>
+                <li>
+                  <a href="#PlayStation">PlayStation</a>
+                </li>
+                <li>
+                  <a href="#Nintendo">Nintendo</a>
+                </li>
+              </ul>
+            </nav>
+            <div className={styles.search}>
+              <input type="text" id="busca" placeholder="Buscar" required />
 
-          <div className={styles.search}>
-            <input type="text" id="busca" placeholder="Buscar" required />
+              <a className={styles.linko} href="">
+                <img className={styles.lupa} id="lupa" src={lupa} alt="Mostrar/Esconder" />
+              </a>
 
-            <a href="">
-              <img id="lupa" src={lupa} alt="Mostrar/Esconder" />
-            </a>
+            </div>
           </div>
 
-          <div className={styles.compras}>
-            <a href="#CarrinhoDeCompras">
-              <img id="carrinho" src={carrinho} alt="Mostrar/Esconder" />
-            </a>
-          </div>
+          <div className={styles.rightNav}>
+            <div className={styles.compras}>
+              <a href="#CarrinhoDeCompras">
+                <img id="carrinho" src={carrinho} alt="Mostrar/Esconder" />
+              </a>
+            </div>
 
-          
             <div className={styles.loginIcone}>
+              
               <button className={styles.loginbotao}>
-                <img src={login} alt="Logo" className="navbar-logo" /> <p> Entrar </p>
+                <img src={login} alt="Logo" className="navbar-logo" />{" "}
+                <p> Entrar </p>
               </button>
-              {/* Mover o dropdown aqui para que seja um irmão do botão */}
-              <div className={`${styles.dropdown} ${ isDropdownOpen ? styles.show : ""}`} >
+
+              <div className={`${styles.dropdown} ${isDropdownOpen ? styles.show : ""}`}>
                 <ul>
                   <li>
                     <a href="/signup">Criar Conta</a>
@@ -81,9 +85,13 @@ function Navbar() {
                     <a href="/login">Fazer Login</a>
                   </li>
                 </ul>
+              </div>
             </div>
+
           </div>
+
         </div>
+
       </header>
     </>
   );

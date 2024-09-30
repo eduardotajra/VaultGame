@@ -7,7 +7,7 @@ header {
     background-color: rgba(96, 31, 109, 0.5);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s, height 0.3s, padding 0.3s;
-    padding: 0.1em 4%;
+    /* padding: 0.1em 4%; */
     padding-top: 1em;
     height: 70px;
     right: 0;
@@ -18,12 +18,7 @@ header {
     padding: 10px 4%;
     height: 60px;
   }
-  
-  header > .interface {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+
   
   header a {
     transition: transform 0.3s;
@@ -34,9 +29,12 @@ header {
   }
   
   .interface {
-    max-width: 1280px;
+    display: flex;
+    align-items: center;
+    /* max-width: 1280px; */
     margin: 0 auto;
-    width: 100%;
+    width: 80%;
+    justify-content: space-between;
   }
   
   .menu-desktop {
@@ -51,6 +49,8 @@ header {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    align-items: center;
+    width: 31em;
   }
   
   .menu li {
@@ -90,29 +90,34 @@ header {
     width: 100%;
   }
   
-  .search img:hover {
+  .lupa:hover {
     transform: scale(1.1);
     opacity: 1;
-    left: 2vh;
-    top: 10px;
+    /* top: 10px; */
     position: relative;
     height: 30px;
     width: 30px;
 
   }
-  .search img {
+  .lupa{
+    /* background-color: yellow; */
     opacity: 1;
-    left: 2vh;
-    top: 10px;
     position: relative;
-    height: 30px;
     width: 30px;
+  }
 
+  .linko{
+    align-items: center;
+    justify-content: center;
+    display: flex;
   }
   
   .search {
-    bottom: 6px;
-    position: relative;
+    width: 15em;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    justify-content: space-between;
   }
   
   .menu li:hover::after {
@@ -120,7 +125,6 @@ header {
   }
   
   .logo img {
-    left: 10vh;
     position: relative;
     opacity: 1;
     color: aliceblue;
@@ -133,15 +137,78 @@ header {
     transform: scale(1.03);
   }
 
+  .compras{
+    width: 2.5em;
+    justify-content: end;
+  }
+
   .compras img{
     position: relative;
     opacity: 1;
     width: 30px;
     height: 30px;
-    left: 2vh;
+    /* left: 2vh; */
   }
   
-  /* Responsividade */
+  
+
+
+.loginIcone {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative; /* Necessário para o dropdown */
+}
+
+.loginbotao {
+  cursor: pointer;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding: 10px;
+  font-size: 15px;
+  color: purple;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.dropdown li::marker {
+  content: '';
+}
+
+.dropdown {
+    padding: 2em;
+    left: 12px;
+    top: 10px;
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+    display: none;
+    position: absolute;
+    background-color: none;
+    margin-top: 10px;
+    z-index: 1;
+}
+
+.loginIcone:hover .dropdown {
+    display: block; /* Exibe o dropdown ao passar o mouse sobre o contêiner */
+}
+
+.central{
+  width: 61em;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rightNav{
+  width: 7.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Responsividade */
   
   /* Tablets */
   @media (max-width: 1024px) {
@@ -232,45 +299,3 @@ header {
       height: 35px;
     }
   }
-
-
-.loginIcone {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    position: relative; /* Necessário para o dropdown */
-}
-
-.loginbotao {
-    cursor: pointer;
-    padding-right: 20px;
-    padding-left: 20px;
-    padding: 10px;
-    font-size: 15px;
-    color: purple;
-    background-color: white;
-    border-radius: 10px;
-}
-
-.dropdown li::marker {
-  content: '';
-}
-
-.dropdown {
-    padding: 2em;
-    left: 12px;
-    top: 10px;
-    list-style-type: none;
-    text-decoration: none;
-    color: black;
-    display: none;
-    position: absolute;
-    background-color: none;
-    margin-top: 10px;
-    z-index: 1;
-}
-
-.loginIcone:hover .dropdown {
-    display: block; /* Exibe o dropdown ao passar o mouse sobre o contêiner */
-}
-
