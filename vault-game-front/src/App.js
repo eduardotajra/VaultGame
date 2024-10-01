@@ -1,6 +1,4 @@
-import './App.css';
 import PaginaInicio from "./PaginaInicio.js";
-
 
 function App() {
   return (
