@@ -47,10 +47,18 @@ header {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
-    align-items: center;
-    width: 31em;
+    align-items: left;
+    /* o align-items:center mudei para left pois nao consegui mudar direto na imagem  // justify-content center virou space-around*/
+  }
+  .menu img {
+    height: 15px;
+    width: 15px;
+    margin-right: 5px;
+    opacity: 1;
+    object-fit: contain;
+    /* tentei meu maximo */
   }
   
   .menu li {
