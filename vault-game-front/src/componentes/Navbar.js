@@ -6,11 +6,6 @@ import lupa from "./img/lupa.png";
 import carrinho from "./img/carrinho.png";
 import login from "./img/login.png";
 import Cadastro from "./Cadastro.js"
-import nintendo from "./img/navBarImg/nintendo.png"
-import pc from "./img/navBarImg/pc.png"
-import ofertas from "./img/navBarImg/ofertas.png"
-import playstation from "./img/navBarImg/playstation.png"
-import xbox from "./img/navBarImg/xbox.png"
 
 function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -42,42 +37,19 @@ function Navbar() {
             <nav className={styles.menu.desktop}>
               <ul className={styles.menu}>
                 <li>
-
-                      <a href="#Ofertas" className={styles.icons}>
-                        <img src={ofertas}></img>
-                        Ofertas
-                      </a>
-
+                  <a href="#Ofertas">Ofertas</a>
                 </li>
                 <li>
-
-                    <a href="#PC" className={styles.icons}>
-                      <img src={pc}></img>
-                      PC
-                    </a>
-
+                  <a href="#PC">PC</a>
                 </li>
                 <li>
-
-                    <a href="#Xbox" className={styles.icons}>
-                      <img src={xbox}></img>
-                      Xbox
-                    </a>
-
+                  <a href="#Xbox">Xbox</a>
                 </li>
                 <li>
-
-                    <a href="#Playstation" className={styles.icons}>
-                      <img src={playstation}></img>
-                      Playstation
-                    </a>
-
+                  <a href="#PlayStation">PlayStation</a>
                 </li>
                 <li>
-                    <a href="#Nintendo" className={styles.icons}>
-                      <img src={nintendo}></img>
-                      Nintendo
-                    </a>
+                  <a href="#Nintendo">Nintendo</a>
                 </li>
               </ul>
             </nav>
@@ -85,9 +57,13 @@ function Navbar() {
               <input type="text" id="busca" placeholder="Buscar" required />
 
               <a className={styles.linko} href="">
-                <img className={styles.lupa} id="lupa" src={lupa} alt="Mostrar/Esconder" />
+                <img
+                  className={styles.lupa}
+                  id="lupa"
+                  src={lupa}
+                  alt="Mostrar/Esconder"
+                />
               </a>
-
             </div>
           </div>
 
@@ -99,7 +75,6 @@ function Navbar() {
             </div>
 
             <div className={styles.loginIcone}>
-
               <button className={styles.loginbotao}>
                 <img src={login} alt="Logo" className="navbar-logo" />{" "}
                 <p> Entrar </p>
@@ -116,11 +91,8 @@ function Navbar() {
                 </ul>
               </div>
             </div>
-
           </div>
-
         </div>
-
       </header>
     </>
   );
