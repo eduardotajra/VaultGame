@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link, Outlet } from "react-router-dom"
 import ScrollReveal from "scrollreveal";
 import styles from "./Cadastro.module.css";
 import olhoFechado from "./img/olho_fechado.png";
@@ -63,7 +64,9 @@ function Cadastro() {
               <br/> <br/>
 
               <div className={styles.esqueceuasenha}>
+              <Link to="/esqueceu-senha">
               <a href="#esqueceu"> Esqueceu a Senha? </a>
+              </Link>
               </div>
 
             </section>

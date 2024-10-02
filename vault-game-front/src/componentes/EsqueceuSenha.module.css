@@ -1,0 +1,39 @@
+.box {
+    width: 200px;
+    height: 7em;
+    padding: 30px;
+    padding-bottom: 83px;
+    border: 2px 10%;
+    border-radius: 10px;
+    background-color: rgba(96, 31, 109, 0.5);
+}
+
+.botao {
+    margin-top: 1em;
+    padding: 5px;
+    width: 110px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-size: 11px;
+    color: white;
+    background-color: rgba(234, 150, 255, 0.2);
+}
+  
+.botao:hover {
+    cursor: pointer;
+    background-color: rgba(230, 132, 255, 0.454);
+}
+  
+.botao:active {
+    padding: 5px;
+    width: 110px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-size: 11px;
+    color: white;
+    background-color: rgba(114, 13, 139, 0.34);
+}
+
+.redefinir {
+    margin-top: 10px;
+}
