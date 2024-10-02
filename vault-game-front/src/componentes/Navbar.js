@@ -33,9 +33,11 @@ function Navbar() {
       <header id="page-header">
         <div className={styles.interface}>
           <div className={styles.logo}>
+            <Link to="/">
             <a className="logo" href="index.html">
               <img src={logo} alt="Logo" />
             </a>
+            </Link>
           </div>
 
           <div className={styles.central}>
