@@ -34,6 +34,32 @@
     background-color: rgba(114, 13, 139, 0.34);
 }
 
+.botao1 {
+    margin-bottom: 1em;
+    padding: 5px;
+    width: 80px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-size: 11px;
+    color: white;
+    background-color: rgba(234, 150, 255, 0.2);
+}
+  
+.botao1:hover {
+    cursor: pointer;
+    background-color: rgba(230, 132, 255, 0.454);
+}
+  
+.botao1:active {
+    padding: 5px;
+    width: 80px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-size: 11px;
+    color: white;
+    background-color: rgba(114, 13, 139, 0.34);
+}
+
 .redefinir {
     margin-top: 10px;
 }
