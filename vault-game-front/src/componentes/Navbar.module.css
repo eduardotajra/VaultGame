@@ -166,6 +166,7 @@ header {
   align-items: center;
   position: relative; /* Necessário para o dropdown */
   max-height: 00%;
+  padding-left: 5%;
 }
 
 .loginbotao {

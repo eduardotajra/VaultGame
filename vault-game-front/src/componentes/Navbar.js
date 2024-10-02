@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { Link, Outlet } from "react-router-dom"
 import ScrollReveal from "scrollreveal";
 import styles from "./Navbar.module.css";
 import logo from "./img/logo.png";
 import lupa from "./img/lupa.png";
 import carrinho from "./img/carrinho.png";
 import login from "./img/login.png";
-import Cadastro from "./Cadastro.js"
 import nintendo from "./img/navBarImg/nintendo.png"
 import pc from "./img/navBarImg/pc.png"
 import ofertas from "./img/navBarImg/ofertas.png"
@@ -122,6 +122,7 @@ function Navbar() {
         </div>
 
       </header>
+      <Outlet />
     </>
   );
 }
