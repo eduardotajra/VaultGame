@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ScrollReveal from "scrollreveal";
 import styles from "./EsqueceuSenha.module.css";
+import voltar from "./img/voltar.png";
 
 function EsqueceuSenha() {
 
@@ -24,27 +25,30 @@ function EsqueceuSenha() {
 
   return (
     <>
-    <Link to="/">
-        <button id="botao1" className={styles.botao1}>
-              Voltar
-        </button>
-    </Link>
       <div id="form-container" className={styles.box}>
+        <div className={styles.botao1}>
+          <Link className={styles.link} to="/">
+            <img className={styles.voltar} src={voltar} alt="Voltar" />
+          </Link>
+        </div>
 
-        <p>Redefinir Senha</p>
-        <br></br>
+        <p className={styles.redefinirSenha}>Redefinir Senha</p>
 
         <section className={styles.redefinir}>
+          <input
+            className={styles.email}
+            type="email"
+            id="email"
+            placeholder="Email"
+            required
+          />
 
-          <input type="email" id="email" placeholder="Email" required />
-          <br /> <br />
-
-          <button type="button" className={styles.botao}>
-            Enviar Código
-          </button>
-
+          <div className={styles.botoes}>
+            <button type="button" className={styles.botao}>
+              Enviar Código
+            </button>
+          </div>
         </section>
-        
       </div>
     </>
   );
