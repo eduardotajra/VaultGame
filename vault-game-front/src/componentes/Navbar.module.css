@@ -43,14 +43,10 @@ header {
     align-items: center;
     /* max-width: 1280px; */
     margin: 0 auto;
-    width: 80%;
+    width: 85%;
     justify-content: space-between;
   }
-  
-  .menu-desktop {
-    flex-grow: 1;
-    text-align: center;
-  }
+
   
   .menu {
     list-style: none;
@@ -165,8 +161,6 @@ header {
   display: flex;
   align-items: center;
   position: relative; /* Necessário para o dropdown */
-  max-height: 00%;
-  padding-left: 5%;
 }
 
 .loginbotao {
@@ -237,7 +231,7 @@ header {
 }
 
 .central{
-  width: 61em;
+  width: 37em;
   display:flex;
   justify-content: center;
   align-items: center;

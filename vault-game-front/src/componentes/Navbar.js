@@ -45,7 +45,6 @@ function Navbar() {
           </div>
 
           <div className={styles.central}>
-            <nav className={styles.menu.desktop}>
               <ul className={styles.menu}>
                 <li>
 
@@ -86,15 +85,15 @@ function Navbar() {
                     </a>
                 </li>
               </ul>
-            </nav>
-            <div className={styles.search}>
-              <input type="text" id="busca" placeholder="Buscar" required />
+          </div>
 
-              <a className={styles.linko} href="/">
-                <img className={styles.lupa} id="lupa" src={lupa} alt="Mostrar/Esconder"/>
-              </a>
+          <div className={styles.search}>
+            <input type="text" id="busca" placeholder="Buscar" required />
 
-            </div>
+            <a className={styles.linko} href="/">
+              <img className={styles.lupa} id="lupa" src={lupa} alt="Mostrar/Esconder"/>
+            </a>
+
           </div>
 
           <div className={styles.rightNav}>
@@ -114,10 +113,10 @@ function Navbar() {
               <div className={styles.dropdown}>
                 <ul className={styles.ulDropdown}>
                   <li>
-                      <button onClick={() => login("cadastro")}>Criar Conta</button>
+                    <button onClick={() => login("login")}>Fazer Login</button>
                   </li>
                   <li>
-                    <button onClick={() => login("login")}>Fazer Login</button>
+                      <button onClick={() => login("cadastro")}>Criar Conta</button>
                   </li>
                 </ul>
               </div>
