@@ -1,8 +1,7 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ScrollReveal from "scrollreveal";
 import styles from "./EsqueceuSenha.module.css";
-import voltar from "./img/voltar.png";
 
 function EsqueceuSenha() {
   useEffect(() => {
@@ -21,39 +20,52 @@ function EsqueceuSenha() {
     });
   }, []);
 
+  const navigate = useNavigate();
+  
+  function retornar(){
+    navigate("/cadastro", {
+      state: "login",
+    });
+}
+
   return (
     <>
+
       <div id="form-container" className={styles.box}>
+
         <div className={styles.conteudoBox}>
+
           <div className={styles.redefinirSenha}>
             <h3>Esqueceu sua senha?</h3>
             <p className={styles.paragrafo}>Informe seu e-mail de cadastro e siga as instruções.</p>
           </div>
 
           <section className={styles.redefinir}>
-            <input
-              className={styles.email}
-              type="email"
-              id="email"
-              placeholder="Email"
-              required
-            />
+
+            <input className={styles.email} type="email" id="email" placeholder="Email" required />
 
             <div className={styles.botoes}>
+
               <div className={styles.botao}>
-                <Link className={styles.link} to="/cadastro">
+                <a className={styles.link} onClick={() => retornar()}>
                   <p className={styles.textoRetornar}>Retornar</p>
-                </Link>
+                </a>
               </div>
+
               <div className={styles.botao}>
-              <button type="button" className={styles.textoBotao} >
-                Enviar Código
-              </button>
+                <button type="button" className={styles.textoBotao} >
+                  Enviar Código
+                </button>
               </div>
+
             </div>
+
           </section>
+
         </div>  
+
       </div>
+
     </>
   );
 }

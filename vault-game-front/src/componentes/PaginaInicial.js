@@ -20,7 +20,9 @@ function PaginaInicial() {
     }, []);
   
     return (
-      <></>
+      <>
+        <div id="home"></div>
+      </>
     );}
 
     export default PaginaInicial;

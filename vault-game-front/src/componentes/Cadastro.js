@@ -20,10 +20,10 @@ function Cadastro() {
   const [pagina, setPagina] = useState(location.state);
   const [mostrarSenha, setMostrarSenha] = useState(false);
 
-  const [nome, setNome] = useState(""); // cria a variavel de nome vazia que dps eh setada pelo setNome no input de nome
-  const [email, setEmail] = useState(""); // cria a variavel email vazia que dps eh setada pelo setEmail no input de email
-  const [senha, setSenha] = useState(""); // cria a variavel senha vazia que dps eh setada pelo setSenha no input de senha
-  const [mensagem, setMensagem] = useState(""); // mostrar uma mensagem o usuario se cadastrou ou nao
+  const [nome, setNome] = useState(""); // cria a variavel de nome vazia que dps é setada pelo setNome no <input> de nome
+  const [email, setEmail] = useState(""); // cria a variavel email vazia que dps é setada pelo setEmail no <input> de email
+  const [senha, setSenha] = useState(""); // cria a variavel senha vazia que dps é setada pelo setSenha no <input> de senha
+  const [mensagem, setMensagem] = useState(""); // mostrar uma mensagem se o usuário se cadastrou ou não
 
   useEffect(() => {
     setPagina(location.state);
@@ -102,10 +102,10 @@ function Cadastro() {
 
             <section className={styles.sessaoCadastro} id="cadastro">
 
-              <input type="text" id="nome" placeholder="Nome" value={nome} onChange={(e) => setNome(e.target.value)} required /> {" "}
+              <input type="text" id="nome" placeholder="Nome" value={nome} onChange={(e) => setNome(e.target.value)} required />
               <br /> <br />
 
-              <input type="email" id="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required /> {" "}
+              <input type="email" id="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
 
               <br /> <br />
 
@@ -114,11 +114,7 @@ function Cadastro() {
                 <input type={mostrarSenha ? "text" : "password"} id="senha" placeholder="Senha" value={senha} onChange={(e) => setSenha(e.target.value)} required />
 
                 <span className={styles.togglePassword} onClick={togglePasswordVisibility}>
-                  <img
-                    id="eye-icon"
-                    src={mostrarSenha ? olhoFechado : olho}
-                    alt="Mostrar/Esconder"
-                  />
+                  <img id="eye-icon" src={mostrarSenha ? olhoFechado : olho} alt="Mostrar/Esconder"/>
                 </span>
 
               </div>
@@ -127,7 +123,7 @@ function Cadastro() {
 
               <button type="button" className={styles.botao} onClick={handleCadastro}> Cadastrar </button>
 
-              {mensagem && <p><br/><br/><br/>{mensagem}</p>}{" "}
+              {mensagem && <p><br/><br/><br/>{mensagem}</p>}
             </section>
           )}
 
