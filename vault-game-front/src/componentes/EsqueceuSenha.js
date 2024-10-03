@@ -27,7 +27,7 @@ function EsqueceuSenha() {
         <div className={styles.conteudoBox}>
           <div className={styles.redefinirSenha}>
             <h3>Esqueceu sua senha?</h3>
-            <p className={styles.paragrafo}>informe seu e-mail de cadastro e siga as instruções.</p>
+            <p className={styles.paragrafo}>Informe seu e-mail de cadastro e siga as instruções.</p>
           </div>
 
           <section className={styles.redefinir}>
@@ -42,7 +42,7 @@ function EsqueceuSenha() {
             <div className={styles.botoes}>
               <div className={styles.botao}>
                 <Link className={styles.link} to="/cadastro">
-                  <p className={styles.textoRetornar}>retornar</p>
+                  <p className={styles.textoRetornar}>Retornar</p>
                 </Link>
               </div>
               <div className={styles.botao}>
