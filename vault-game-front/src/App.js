@@ -13,6 +13,7 @@ function App() {
           <Route index element={<PaginaInicial/>} />
           <Route path="/esqueceu-senha" element={<EsqueceuSenha />} />
           <Route path="/cadastro" element={<Cadastro/>} />
+
           <Route path="*" element={<Pagina404 />} />
         </Route>
       </Routes>

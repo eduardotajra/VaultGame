@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { Link, Outlet } from "react-router-dom"
+import React, { useEffect } from "react";
+import { Link, Outlet, useNavigate } from "react-router-dom"
 import ScrollReveal from "scrollreveal";
 import styles from "./Navbar.module.css";
 import logo from "./img/logo.png";
 import lupa from "./img/lupa.png";
 import carrinho from "./img/carrinho.png";
-import login from "./img/login.png";
+import sigIn from "./img/login.png";
 import nintendo from "./img/navBarImg/nintendo.png"
 import pc from "./img/navBarImg/pc.png"
 import ofertas from "./img/navBarImg/ofertas.png"
@@ -13,7 +13,6 @@ import playstation from "./img/navBarImg/playstation.png"
 import xbox from "./img/navBarImg/xbox.png"
 
 function Navbar() {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   useEffect(() => {
     ScrollReveal().reveal(".page-header", {
@@ -24,14 +23,19 @@ function Navbar() {
     });
   }, []);
 
-  // const toggleDropdown = () => {
-  //   setIsDropdownOpen(!isDropdownOpen);
-  // };
+  const navigate = useNavigate();
+
+  function login(estado){
+    navigate("/cadastro", {
+      state: estado,
+    });
+}
 
   return (
     <>
       <header id="page-header">
         <div className={styles.interface}>
+
           <div className={styles.logo}>
             <Link to="/">
             <a className="logo" href="index.html">
@@ -46,7 +50,7 @@ function Navbar() {
                 <li>
 
                       <a href="#Ofertas" className={styles.icons}>
-                        <img src={ofertas}></img>
+                        <img src={ofertas} alt="Ofertas"></img>
                         Ofertas
                       </a>
 
@@ -54,7 +58,7 @@ function Navbar() {
                 <li>
 
                     <a href="#PC" className={styles.icons}>
-                      <img src={pc}></img>
+                      <img src={pc} alt="Pc"></img>
                       PC
                     </a>
 
@@ -62,7 +66,7 @@ function Navbar() {
                 <li>
 
                     <a href="#Xbox" className={styles.icons}>
-                      <img src={xbox}></img>
+                      <img src={xbox} alt="Xbox"></img>
                       Xbox
                     </a>
 
@@ -70,14 +74,14 @@ function Navbar() {
                 <li>
 
                     <a href="#Playstation" className={styles.icons}>
-                      <img src={playstation}></img>
+                      <img src={playstation} alt="Playstation"></img>
                       Playstation
                     </a>
 
                 </li>
                 <li>
                     <a href="#Nintendo" className={styles.icons}>
-                      <img src={nintendo}></img>
+                      <img src={nintendo} alt="Nintendo"></img>
                       Nintendo
                     </a>
                 </li>
@@ -86,8 +90,8 @@ function Navbar() {
             <div className={styles.search}>
               <input type="text" id="busca" placeholder="Buscar" required />
 
-              <a className={styles.linko} href="">
-                <img className={styles.lupa} id="lupa" src={lupa} alt="Mostrar/Esconder" />
+              <a className={styles.linko} href="/">
+                <img className={styles.lupa} id="lupa" src={lupa} alt="Mostrar/Esconder"/>
               </a>
 
             </div>
@@ -103,17 +107,17 @@ function Navbar() {
             <div className={styles.loginIcone}>
 
               <button className={styles.loginbotao}>
-                <img src={login} alt="Logo" className="navbar-logo" />{" "}
+                <img src={sigIn} alt="Logo" className="navbar-logo" />
                 <p> Entrar </p>
               </button>
 
               <div className={styles.dropdown}>
                 <ul className={styles.ulDropdown}>
                   <li>
-                    <button href="/signup">Criar Conta</button>
+                      <button onClick={() => login("cadastro")}>Criar Conta</button>
                   </li>
                   <li>
-                    <button href="/login">Fazer Login</button>
+                    <button onClick={() => login("login")}>Fazer Login</button>
                   </li>
                 </ul>
               </div>

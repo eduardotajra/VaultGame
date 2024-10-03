@@ -41,7 +41,7 @@ function EsqueceuSenha() {
 
             <div className={styles.botoes}>
               <div className={styles.botao}>
-                <Link className={styles.link} to="/">
+                <Link className={styles.link} to="/cadastro">
                   <p className={styles.textoRetornar}>retornar</p>
                 </Link>
               </div>

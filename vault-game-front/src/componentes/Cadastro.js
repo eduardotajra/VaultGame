@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, Outlet } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import ScrollReveal from "scrollreveal";
 import styles from "./Cadastro.module.css";
 import olhoFechado from "./img/olho_fechado.png";
@@ -17,8 +17,15 @@ function Cadastro() {
 
   }, []);
 
-  const [pagina, setPagina] = useState("login");
+  const location = useLocation();
+
+  const [pagina, setPagina] = useState(location.state);
   const [mostrarSenha, setMostrarSenha] = useState(false);
+
+  useEffect(() => {
+    setPagina(location.state);
+}, [location.state]);
+
 
   const alterarPagina = (novaPagina) => {
     setPagina(novaPagina);
@@ -99,6 +106,7 @@ function Cadastro() {
               <br/>
             </section>
           )}
+
         </div>
       </div>
       </>
