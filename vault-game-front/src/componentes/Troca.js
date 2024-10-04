@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom"; // Importando useLocation
+import { useLocation } from "react-router-dom";
 import Login from "./Login";
 import Cadastro from "./Cadastro";
 import styles from "./Troca.module.css";
@@ -33,7 +33,7 @@ function Troca() {
       </div>
 
       <div className={styles.componenteContainer}>
-        {/* ativo eh login? entao vai receber voltar a pagina login, caso contrario recebe cadastro :) */}
+        {/* ativo eh "login"? entao vai voltar a pagina login, caso contrario volta cadastro :) */}
         {ativo === "login" ? <Login /> : <Cadastro />}
       </div>
 

@@ -160,7 +160,7 @@ header {
   cursor: pointer;
   display: flex;
   align-items: center;
-  position: relative; /* Necessário para o dropdown */
+  position: relative;
 }
 
 .loginbotao {
