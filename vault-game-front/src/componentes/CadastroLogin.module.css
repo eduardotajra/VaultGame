@@ -1,0 +1,84 @@
+/* Definições gerais */
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body {
+  color: white;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(./img/background-img.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.esqueceuasenha {
+  margin-top: 10px;
+}
+
+a {
+  color: white;
+}
+
+input {
+  padding: 7px;
+  margin: 5px 0;
+  width: 90%;
+  border-radius: 5px;
+  border: none;
+}
+
+.box {
+  width: 13em;
+  padding: 1.5em;
+  border-radius: 10px;
+  background-color: rgba(96, 31, 109, 0.5);
+}
+
+.botao {
+  padding: 6px;
+  width: 60%;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(234, 150, 255, 0.2);
+}
+
+.botao:hover {
+  cursor: pointer;
+  background-color: rgba(230, 132, 255, 0.454);
+}
+
+.passwordContainer {
+  position: relative;
+}
+
+.togglePassword {
+  position: absolute;
+  top: 53%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 12px;
+  color: white;
+}
+
+img {
+  width: 15px;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+}
