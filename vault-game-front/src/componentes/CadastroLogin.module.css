@@ -24,6 +24,10 @@ body {
 .esqueceuasenha {
   margin-top: 10px;
 }
+.esqueceuasenha:hover{
+  text-decoration: underline;
+  text-decoration-color: rgb(255, 255, 255);
+}
 
 a {
   color: white;

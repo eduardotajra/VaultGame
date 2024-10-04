@@ -49,6 +49,7 @@ function Cadastro() {
           email: formDado.email,
           password: formDado.senha,
         });
+
         setErro({});
         setFormDado({ nome: "", email: "", senha: "" });
         setMensagem("Usuário cadastrado com sucesso!");
@@ -65,46 +66,25 @@ function Cadastro() {
 
   return (
     <div className={styles.home}>
+
       <div className={styles.box}>
         
         <section className={styles.sessaoCadastro} id="cadastro">
-          <input
-            type="text"
-            id="nome"
-            placeholder="Nome"
-            value={formDado.nome}
-            onChange={handleChange}
-            required
-          />
+          <input type="text" id="nome" placeholder="Nome" value={formDado.nome} onChange={handleChange} required/>
+
           {erro.nome && <p className={styles.error}>{erro.nome}</p>}
 
-          <input
-            type="email"
-            id="email"
-            placeholder="Email"
-            value={formDado.email}
-            onChange={handleChange}
-            required
-          />
+          <input type="email" id="email" placeholder="Email" value={formDado.email} onChange={handleChange} required/>
+
           {erro.email && <p className={styles.error}>{erro.email}</p>}
 
           <div className={styles.passwordContainer}>
-            <input
-              type={mostrarSenha ? "text" : "password"}
-              id="senha"
-              placeholder="Senha"
-              value={formDado.senha}
-              onChange={handleChange}
-              required
-            />
+            <input type={mostrarSenha ? "text" : "password"} id="senha" placeholder="Senha" value={formDado.senha} onChange={handleChange} required/>
+
             {erro.senha && <p className={styles.error}>{erro.senha}</p>}
 
             <span className={styles.togglePassword} onClick={togglePasswordVisibility}>
-              <img
-                id="eye-icon"
-                src={mostrarSenha ? olhoFechado : olho}
-                alt="Mostrar/Esconder"
-              />
+              <img id="eye-icon" src={mostrarSenha ? olhoFechado : olho} alt="Mostrar/Esconder"/>
             </span>
           </div>
 
@@ -113,8 +93,11 @@ function Cadastro() {
           </button>
 
           {mensagem && <p>{mensagem}</p>}
+
         </section>
+
       </div>
+
     </div>
   );
 }

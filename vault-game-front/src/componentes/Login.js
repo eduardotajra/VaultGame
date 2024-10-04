@@ -20,19 +20,13 @@ function Login() {
           <input type="email" id="email" placeholder="Email" required />
 
           <div className={styles.passwordContainer}>
-            <input
-              type={mostrarSenha ? "text" : "password"}
-              id="senha"
-              placeholder="Senha"
-              required
-            />
+            
+            <input type={mostrarSenha ? "text" : "password"} id="senha" placeholder="Senha" required/>
+
             <span className={styles.togglePassword} onClick={togglePasswordVisibility}>
-              <img
-                id="eye-icon"
-                src={mostrarSenha ? olhoFechado : olho}
-                alt="Mostrar/Esconder"
-              />
+              <img id="eye-icon" src={mostrarSenha ? olhoFechado : olho} alt="Mostrar/Esconder"/>
             </span>
+
           </div>
 
           <button type="button" className={styles.botao}>
@@ -42,8 +36,11 @@ function Login() {
           <div className={styles.esqueceuasenha}>
             <Link to="/esqueceu-senha">Esqueceu a Senha?</Link>
           </div>
+
         </section>
+
       </div>
+
     </div>
   );
 }
