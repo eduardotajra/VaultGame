@@ -1,6 +1,6 @@
 from ninja import Router
 from django.http import JsonResponse
-from .schemas import UsuarioSchema
+from .schemas import Usuario as UsuarioSchema
 from django.contrib import auth
 from django.conf import settings
 from datetime import datetime, timedelta

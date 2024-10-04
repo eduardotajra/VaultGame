@@ -3,7 +3,6 @@ from django.db import models
 
 class CustomUser(AbstractUser):
     email = models.EmailField(unique=True)
-    full_name = models.CharField(max_length=255)
 
     groups = models.ManyToManyField(
         'auth.Group',

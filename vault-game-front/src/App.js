@@ -3,7 +3,8 @@ import Navbar from "./componentes/Navbar";
 import Cadastro from "./componentes/Cadastro";
 import EsqueceuSenha from "./componentes/EsqueceuSenha";
 import Pagina404 from "./componentes/Pagina404";
-import PaginaInicial from "./componentes/PaginaInicial"
+import PaginaInicial from "./componentes/PaginaInicial";
+import Login from "./componentes/Login";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route index element={<PaginaInicial/>} />
           <Route path="/esqueceu-senha" element={<EsqueceuSenha />} />
           <Route path="/cadastro" element={<Cadastro/>} />
+          <Route path="/login" element={<Login />} />
           
           <Route path="*" element={<Pagina404 />} />
         </Route>
