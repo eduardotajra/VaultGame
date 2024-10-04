@@ -50,7 +50,7 @@ input {
 
 .box {
   width: 200px;
-  height: 7.3em;
+  height: 11.3em;
   padding: 30px;
   padding-bottom: 83px;
   border: 2px 10%;
@@ -152,4 +152,9 @@ input {
 
 img {
   width: 10px;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
 }
