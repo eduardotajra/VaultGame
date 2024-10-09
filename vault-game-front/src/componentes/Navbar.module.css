@@ -105,6 +105,7 @@ header {
 
   }
   .lupa{
+    left: 1em;
     opacity: 1;
     position: relative;
     width: 30px;
