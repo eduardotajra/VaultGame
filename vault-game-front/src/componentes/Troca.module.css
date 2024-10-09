@@ -1,0 +1,60 @@
+.container {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .botaoContainer {
+    margin: 20px 20px 5px 20px;
+  }
+  
+  .botaoDiv {
+    margin-left: 5px;
+    position: relative;
+    padding: 0.75em;
+    width: 6em;
+    border: 1px solid transparent;
+    top: 0%;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 11px;
+    color: white;
+    background-color: rgba(96, 31, 109, 0.5);
+  }
+  
+  .botaoDiv:hover {
+    background-color: rgba(128, 60, 145, 0.454);
+  }
+  
+  .botaoDiv:active {
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-size: 11px;
+    color: white;
+    background-color: rgba(114, 13, 139, 0.34);
+  }
+  
+  .botaoDivOn {
+    cursor: pointer;
+    position: relative;
+    padding: 0.75em;
+    width: 6em;
+    border: 1px solid transparent;
+    top: 0%;
+    border-radius: 5px;
+    font-size: 11px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-decoration: underline;
+  }
+  
+  .botaoDivOn:hover {
+    background-color: rgba(77, 29, 88, 0.454);
+  }
+  
+  .botaoDivOn:active {
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-size: 11px;
+    color: white;
+    background-color: rgba(114, 13, 139, 0.34);
+  }

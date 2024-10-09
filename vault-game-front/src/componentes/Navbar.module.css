@@ -1,0 +1,339 @@
+/* Estilos Básicos do Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(96, 31, 109, 0.5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s, height 0.3s, padding 0.3s;
+    /* padding: 0.1em 4%; */
+    padding-top: 1em;
+    height: 70px;
+    right: 0;
+  }
+  
+  header.scrolled {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 10px 4%;
+    height: 60px;
+  }
+
+  
+  header a {
+    transition: transform 0.3s;
+  }
+  
+  header a:hover {
+    transform: scale(1.1);
+  }
+  
+  .icons{
+    display: flex;
+    align-items: center;
+  }
+
+  .icons img{
+    width: 15px;
+    padding-right: 3px;
+  }
+
+  .interface {
+    display: flex;
+    align-items: center;
+    /* max-width: 1280px; */
+    margin: 0 auto;
+    width: 85%;
+    justify-content: space-between;
+  }
+
+  
+  .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 40em;
+  }
+  
+  .menu li {
+    margin: 0 20px;
+    position: relative;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    transition: color 0.3s, transform 0.3s;
+  }
+  
+  .menu a:hover {
+    color: rgb(232, 230, 232);
+  }
+  
+  .menu li::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+  }
+  
+  .homeLine a {
+    color: #ffffff;
+  }
+  
+  .homeLine li::after {
+    width: 100%;
+  }
+  
+  .lupa:hover {
+    transform: scale(1.1);
+    opacity: 1;
+    position: relative;
+    height: 30px;
+    width: 30px;
+
+  }
+  .lupa{
+    left: 1em;
+    opacity: 1;
+    position: relative;
+    width: 30px;
+  }
+
+  .linko{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  
+  .search {
+    width: 15em;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .menu li:hover::after {
+    width: 100%;
+  }
+  
+  .logo img {
+    position: relative;
+    opacity: 1;
+    color: aliceblue;
+    width: 100px;
+    height: 50px;
+    transition: transform 0.3s;
+  }
+  
+  .logo img:hover {
+    transform: scale(1.03);
+  }
+
+  .compras{
+    width: 2.5em;
+    justify-content: end;
+  }
+
+  .compras img{
+    position: relative;
+    opacity: 1;
+    width: 30px;
+    height: 30px;
+  }
+  
+  
+
+
+.loginIcone {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.loginbotao {
+  cursor: pointer;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding: 14%;
+  font-size: 15px;
+  color: purple;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.dropdown li::marker {
+  content: '';
+}
+
+.dropdown li {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.dropdown {
+  z-index: 9000;
+  display: none;
+  padding: 0.7em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  position: absolute;
+  background-color: none;
+  width: 7.1em;
+  justify-content: space-between;
+  top: 100%;
+  right: -25%;
+  border: 0;
+  max-width: 6.9em;
+  text-align: center;
+  background-color: white;
+  border-radius: 5px;
+}
+
+
+.dropdown li button{
+  font-size: 1em;
+  z-index: 9001;
+  background-color: white;
+  border: 8px solid white;
+}
+
+.dropdown li button:hover{
+  cursor: pointer;
+  z-index: 9001;
+  width: 7.1em;
+  background-color: #EEEEEE;
+  border: 8px solid #EEEEEE;
+}
+
+.dropdown li button:active{
+  cursor: pointer;
+  width: 100%;
+  z-index: 9001;
+  background-color: #EEEEEE;
+  border: 8px solid #EEEEEE;
+}
+
+.loginIcone:hover .dropdown {
+    display: block; /* Exibe o dropdown ao passar o mouse sobre o contêiner */
+}
+
+.central{
+  width: 37em;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rightNav{
+  width: 7.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Responsividade */
+  
+  /* Tablets */
+  @media (max-width: 1024px) {
+    header {
+      padding: 20px 5%;
+      height: 60px;
+    }
+  
+    .menu li {
+      margin: 0 15px;
+    }
+  
+    .menu a {
+      font-size: 0.95rem;
+    }
+  
+    .logo img {
+      width: 90px;
+      height: 45px;
+    }
+  }
+  
+  /* Celular */
+  @media (max-width: 768px) {
+    header {
+      padding: 15px 5%;
+      height: 50px;
+    }
+  
+    .menu {
+      flex-direction: column;
+      align-items: center;
+      display: none;
+      background-color: rgba(96, 31, 109, 0.9);
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+  
+    .menu.active {
+      display: flex;
+    }
+  
+    .menu li {
+      margin: 10px 0;
+    }
+  
+    .menu a {
+      font-size: 1.2rem;
+    }
+  
+    .logo img {
+      width: 80px;
+      height: 40px;
+    }
+  
+    /* Botão de Menu Hamburger */
+    .menu-toggle {
+      display: block;
+      cursor: pointer;
+      z-index: 1001;
+    }
+  
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background-color: #ffffff;
+      margin: 5px 0;
+      transition: all 0.3s;
+    }
+  }
+  
+  /* Pequenas Telas */
+  @media (max-width: 480px) {
+    header {
+      padding: 10px 5%;
+      height: 45px;
+    }
+  
+    .menu a {
+      font-size: 1rem;
+    }
+  
+    .logo img {
+      width: 70px;
+      height: 35px;
+    }
+  }
