@@ -1,5 +1,7 @@
 /* Estilos Básicos do Header */
-header {
+  .pageHeader{
+    display: flex;
+    justify-content: center;
     position: fixed;
     top: 0;
     width: 100%;
@@ -7,9 +9,7 @@ header {
     background-color: rgba(96, 31, 109, 0.5);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s, height 0.3s, padding 0.3s;
-    /* padding: 0.1em 4%; */
-    padding-top: 1em;
-    height: 70px;
+    height: 5em;
     right: 0;
   }
   
@@ -41,10 +41,8 @@ header {
   .interface {
     display: flex;
     align-items: center;
-    /* max-width: 1280px; */
-    margin: 0 auto;
-    width: 85%;
-    justify-content: space-between;
+    width: 100%;
+    justify-content: space-around;
   }
 
   
@@ -133,6 +131,7 @@ header {
     position: relative;
     opacity: 1;
     color: aliceblue;
+
     width: 100px;
     height: 50px;
     transition: transform 0.3s;
@@ -164,15 +163,21 @@ header {
   position: relative;
 }
 
+.textLogo{
+  height: 1.5em;
+}
+
 .loginbotao {
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   cursor: pointer;
-  padding-right: 20px;
-  padding-left: 20px;
-  padding: 14%;
   font-size: 15px;
   color: purple;
   background-color: white;
   border-radius: 10px;
+  width: 5.5em;
 }
 
 .dropdown li::marker {
@@ -191,7 +196,6 @@ header {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   position: absolute;
-  background-color: none;
   width: 7.1em;
   justify-content: space-between;
   top: 100%;
@@ -240,7 +244,7 @@ header {
 }
 
 .rightNav{
-  width: 7.5em;
+  width: 10em;
   display: flex;
   justify-content: space-between;
   align-items: center;
