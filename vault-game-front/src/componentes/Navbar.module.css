@@ -196,10 +196,10 @@
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   position: absolute;
-  width: 7.1em;
+  width: 8em;
   justify-content: space-between;
   top: 100%;
-  right: -25%;
+  right: 0%;
   border: 0;
   max-width: 6.9em;
   text-align: center;
@@ -218,7 +218,6 @@
 .dropdown li button:hover{
   cursor: pointer;
   z-index: 9001;
-  width: 7.1em;
   background-color: #EEEEEE;
   border: 8px solid #EEEEEE;
 }
