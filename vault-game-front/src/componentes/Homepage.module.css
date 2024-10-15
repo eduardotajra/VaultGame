@@ -1,9 +1,6 @@
 .homepage{
     position: relative;
-    top: 5em
-}
-
-.cartasContainer {
+    top: 6.5em;
 }
 
 .cartas {
@@ -20,7 +17,8 @@
     font-weight: bold !important;
 }
 
-h2 {
+h4 {
     text-align: left;
     margin-bottom: 1em;
+    color: indigo;
 }
