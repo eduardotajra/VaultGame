@@ -12,6 +12,8 @@ import ofertas from "./img/navBarImg/ofertas.png";
 import playstation from "./img/navBarImg/playstation.png";
 import xbox from "./img/navBarImg/xbox.png";
 
+
+
 function Navbar() {
   // Efeito de ScrollReveal
   useEffect(() => {

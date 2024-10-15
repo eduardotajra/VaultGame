@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import ScrollReveal from "scrollreveal";
 import styles from "./EsqueceuSenha.module.css";
 
+
+
 function EsqueceuSenha() {
   useEffect(() => {
     ScrollReveal().reveal("#form-container", {
