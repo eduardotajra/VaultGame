@@ -5,11 +5,11 @@ import footer from "./Footer.js";
 import minecraft from "./img/jogosImg/minecraft_cover.png";
 import reddead2 from "./img/jogosImg/red_dead_2_cover.jpg";
 import wukong from "./img/jogosImg/wukong_cover.png";
-import eldenring from "./img/jogosImg/elden_ring_cover.jpg"
-import silenthill2ps5 from "./img/jogosImg/silent_hill_2_ps5_cover.jpg"
-import tlou_ps5 from "./img/jogosImg/tlou_ps4_cover.jpg"
-import db_sz from "./img/jogosImg/db_sz_cover.jpg"
-import hitman3ps5 from "./img/jogosImg/hitman_ps5_cover.jpg"
+import eldenring from "./img/jogosImg/elden_ring_cover.jpg";
+import silenthill2ps5 from "./img/jogosImg/silent_hill_2_ps5_cover.jpg";
+import tlou_ps5 from "./img/jogosImg/tlou_ps4_cover.jpg";
+import db_sz from "./img/jogosImg/db_sz_cover.jpg";
+import hitman3ps5 from "./img/jogosImg/hitman_ps5_cover.jpg";
 
 import Footer from "./Footer";
 
@@ -28,8 +28,6 @@ function Homepage() {
           height: 400px;
         }
       `}</style>
-
-      
 
       <div className={styles.homepage}>
         <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
@@ -63,7 +61,7 @@ function Homepage() {
 
         <div className={styles.cartasContainer}>
           <div className={styles.cartas}>
-            <div className="card bg-light mb-3" style={{ width: "18em" }}>
+            <div className={`${styles.card} bg-light mb-3`} style={{ width: "18em" }}>
               <img className="card-img-top img-fluid p-3" src={minecraft} alt="Minecraft" />
               <div className="card-body">
                 <h5 className="text-secondary mb-3">Minecraft - PC (Microsoft Store)</h5>
@@ -74,7 +72,7 @@ function Homepage() {
                 <a href="#" className="btn btn-success">Compre Agora</a>
               </div>
             </div>
-            <div className="card bg-light mb-3" style={{ width: "18em" }}>
+            <div className={`${styles.card} bg-light mb-3`} style={{ width: "18em" }}>
               <img className="card-img-top img-fluid p-3" src={reddead2} alt="Red Dead Redemption 2" />
               <div className="card-body">
                 <h5 className="text-secondary mb-3">Red Dead Redemption 2 - PC (Steam)</h5>
@@ -85,7 +83,7 @@ function Homepage() {
                 <a href="#" className="btn btn-success">Compre Agora</a>
               </div>
             </div>
-            <div className="card bg-light mb-3" style={{ width: "18em" }}>
+            <div className={`${styles.card} bg-light mb-3`} style={{ width: "18em" }}>
               <img className="card-img-top img-fluid p-3" src={wukong} alt="Black Myth Wukong" />
               <div className="card-body">
                 <h5 className="text-secondary mb-3">Black Myth Wukong <br/> PC (Steam)</h5>
@@ -96,7 +94,7 @@ function Homepage() {
                 <a href="#" className="btn btn-success">Compre Agora</a>
               </div>
             </div>
-            <div className="card bg-light mb-3" style={{ width: "18em" }}>
+            <div className={`${styles.card} bg-light mb-3`} style={{ width: "18em" }}>
               <img className="card-img-top img-fluid p-3" src={eldenring} alt="Elden Ring" />
               <div className="card-body">
                 <h5 className="text-secondary mb-3">Elden Ring Standard Edition - PC (Steam)</h5>
@@ -112,7 +110,7 @@ function Homepage() {
           <h4>Ofertas de Playstation</h4>
 
           <div className={styles.cartas}>
-            <div className="card bg-light mb-3" style={{ width: "18em" }}>
+            <div className={`${styles.card} bg-light mb-3`} style={{ width: "18em" }}>
               <img className="card-img-top img-fluid p-3" src={silenthill2ps5} alt="Silent Hill 2 Remake PS5" />
               <div className="card-body">
                 <h5 className="text-secondary mb-3">Silent Hill 2 Remake <br/> PS5</h5>
@@ -123,7 +121,7 @@ function Homepage() {
                 <a href="#" className="btn btn-success">Compre Agora</a>
               </div>
             </div>
-            <div className="card bg-light mb-3" style={{ width: "18em" }}>
+            <div className={`${styles.card} bg-light mb-3`} style={{ width: "18em" }}>
               <img className="card-img-top img-fluid p-3" src={tlou_ps5} alt="The Last Of Us 2" />
               <div className="card-body">
                 <h5 className="text-secondary mb-3">The Last Of Us - Part 2 <br/> PS4</h5>
@@ -134,7 +132,7 @@ function Homepage() {
                 <a href="#" className="btn btn-success">Compre Agora</a>
               </div>
             </div>
-            <div className="card bg-light mb-3" style={{ width: "18em" }}>
+            <div className={`${styles.card} bg-light mb-3`} style={{ width: "18em" }}>
               <img className="card-img-top img-fluid p-3" src={hitman3ps5} alt="Hitman PS5" />
               <div className="card-body">
                 <h5 className="text-secondary mb-3">Hitman World Of Assassination - PS5</h5>
@@ -145,7 +143,7 @@ function Homepage() {
                 <a href="#" className="btn btn-success">Compre Agora</a>
               </div>
             </div>
-            <div className="card bg-light mb-3" style={{ width: "18em" }}>
+            <div className={`${styles.card} bg-light mb-3`} style={{ width: "18em" }}>
               <img className="card-img-top img-fluid p-3" src={db_sz} alt="Dragon Ball Sparking! Zero" />
               <div className="card-body">
                 <h5 className="text-secondary mb-3">Dragon Ball Sparking! Zero - PS5</h5>
