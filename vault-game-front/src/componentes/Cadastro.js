@@ -15,7 +15,6 @@ function Cadastro() {
     setMostrarSenha((prevMostrar) => !prevMostrar);
   };
 
-  // Função para enviar os dados do formulário
   const handleChange = (event) => {
     setFormDado({
       ...formDado,
@@ -23,7 +22,6 @@ function Cadastro() {
     });
   };
 
-  // Função para validar os dados do formulário
   const validação = () => {
     let formErrors = {};
     if (!formDado.nome.trim()) {
@@ -39,15 +37,14 @@ function Cadastro() {
     return Object.keys(formErrors).length === 0;
   };
 
-  // Função para fazer o cadastro
   const handleCadastro = async (event) => {
     event.preventDefault();
     if (validação()) {
       try {
-        const response = await axios.post("http://localhost:8000/api/users/create/", {
+        const response = await axios.post("http://127.0.0.1:8000/api/autenticacao/register/", {
           username: formDado.nome,
           email: formDado.email,
-          password: formDado.senha,
+          password: formDado.senha
         });
 
         setErro({});
@@ -70,7 +67,7 @@ function Cadastro() {
       <div className={styles.box}>
         
         <section className={styles.sessaoCadastro} id="cadastro">
-          <input type="text" id="nome" placeholder="Nome" value={formDado.nome} onChange={handleChange} required/>
+          <input type="text" id="nome" placeholder="Username" value={formDado.nome} onChange={handleChange} required/>
 
           {erro.nome && <p className={styles.error}>{erro.nome}</p>}
 

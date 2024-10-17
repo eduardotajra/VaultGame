@@ -13,7 +13,7 @@ fui_router = Router()
 
 @fui_router.get('protegida/', auth = JWTAuth())
 def fui(request):
-    return JsonResponse({"msg":"Fui!"})
+    return JsonResponse({"msg":"Logado com Sucesso!"})
 
 @login_router.post('login/', auth=None)
 def logar(request, login: LoginUsuario):
