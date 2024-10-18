@@ -3,11 +3,13 @@ import styles from "./CadastroLogin.module.css";
 import axios from "axios";
 import olhoFechado from "./img/olho_fechado.png";
 import olho from "./img/olho.png";
+import loadingGif from "./img/loading.gif";
 
 function Cadastro() {
   const [mostrarSenha, setMostrarSenha] = useState(false);
   const [formDado, setFormDado] = useState({ nome: "", email: "", senha: "" });
   const [erro, setErro] = useState({});
+  const [loading, setLoading] = useState(false);
   const [mensagem, setMensagem] = useState("");
 
   // Função para mostrar/ocultar a senha
@@ -40,6 +42,7 @@ function Cadastro() {
   const handleCadastro = async (event) => {
     event.preventDefault();
     if (validação()) {
+      setLoading(true);
       try {
         const response = await axios.post("http://127.0.0.1:8000/api/autenticacao/register/", {
           username: formDado.nome,
@@ -57,6 +60,8 @@ function Cadastro() {
         } else {
           console.error("Erro desconhecido:", error.message);
         }
+      } finally {
+        setLoading(false);
       }
     }
   };
@@ -85,8 +90,12 @@ function Cadastro() {
             </span>
           </div>
 
-          <button type="button" className={styles.botao} onClick={handleCadastro}>
-            Cadastrar
+          <button type="button" className={styles.botao} onClick={handleCadastro} disabled={loading}>
+            {loading ? (
+              <img src={loadingGif} alt="Carregando" style={{ width: "20px", height: "20px" }} />
+            ) : (
+              "Entrar"
+            )}
           </button>
 
           {mensagem && <p>{mensagem}</p>}
