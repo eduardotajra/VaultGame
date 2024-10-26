@@ -3,6 +3,7 @@ import Navbar from "./componentes/Navbar";
 import Homepage from "./componentes/Homepage";
 import EsqueceuSenha from "./componentes/EsqueceuSenha";
 import Pagina404 from "./componentes/Pagina404";
+import Jogo from "./componentes/Jogo";
 import Troca from "./componentes/Troca";
 
 function App() {
@@ -12,14 +13,17 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<Homepage />} >
-      </Route>
-        
+
+        <Route path="/" element={<Homepage />}/> 
+
+        <Route path="/comprar/:id" element={<Jogo />} />
+
         <Route path="/esqueceu-senha" element={<EsqueceuSenha />} />
+
         <Route path="/cadastro" element={<Troca />} />
         
-        
         <Route path="*" element={<Pagina404 />} />
+
       </Routes>
     </BrowserRouter>
   );

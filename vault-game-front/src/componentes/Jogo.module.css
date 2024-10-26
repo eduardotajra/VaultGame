@@ -1,0 +1,26 @@
+.imgFrame{
+    position: relative;
+    width: fit-content;
+    top: 10em;
+    left: 5em;
+    border: 5px solid white;
+    border-radius: 8px;
+}
+
+.imgFrame img {
+    width: 500px;
+}
+
+.nome {
+    position: relative;
+    left: 39em;
+    bottom: 5em;
+    width: 50em;
+}
+
+.desc {
+    position: relative;
+    left: 50em;
+    bottom: 5em;
+    width: 30em;
+}
