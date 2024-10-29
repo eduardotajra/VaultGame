@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from "./Jogo.module.css";
 import axios from 'axios';
+import Footer from "./Footer.js";
 import { useParams } from 'react-router-dom';
 
 function Jogo() {
@@ -16,32 +17,32 @@ function Jogo() {
 
     return (
         <>
-        <style jsx>{`
-            body {
-              justify-content: inherit;
-            }
-          `} </style>
 
-        <div className={styles.Jogo}>
+        <div className={styles.jogo}>
             <div className={styles.imgFrame}>
                 <img src={`${jogo.imgUrl}`} alt={jogo.titulo} />
             </div>
-            
-            <div className={styles.nome}>
-                <h2>{jogo.titulo}</h2>
-            </div>
+                <div className={styles.box}>
 
-            <div className={styles.desc}> 
-                <p>{jogo.descricao}</p>
-            </div>
-            
-            <p>Preço: R${jogo.preco}</p>
-            <p>Avaliação: {jogo.avaliacao}</p>
-            <p>Publisher: {jogo.publisher}</p>
-            <p>Plataforma: {jogo.plataforma}</p>
-            <p>Idioma: {jogo.idioma}</p>
-            <p>Categoria: {jogo.categoria}</p>
+                    <div className={styles.nomeDesc}>
+                        <h3>{jogo.titulo}</h3>
+                        <p>{jogo.descricao}</p>
+                    </div>
+
+                    <div className={styles.preco}> 
+                        <h3><strong> R${jogo.preco.toLocaleString("pt-BR", { minimumFractionDigits: 2 })} </strong> </h3>
+                    </div>
+
+                    <div className={styles.comprar}>
+                        <button className={styles.botaoCarrinho} type="submit">Adicionar ao Carrinho</button>
+                        <button className={styles.botaoComprar} type="submit">Comprar</button>
+                    </div>
+                </div>
         </div>
+
+        <footer>
+        <Footer />
+        </footer>
     </>
     );
 }
