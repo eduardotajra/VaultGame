@@ -48,7 +48,8 @@ def registrarJogo(request, novoJogo: RegistroJogos):
         plataforma=novoJogo.plataforma, 
         idioma=novoJogo.idioma,
         categoria=novoJogo.categoria,
-        imgUrl=novoJogo.imgUrl
+        imgUrl=novoJogo.imgUrl,
+        lancamento = novoJogo.lancamento
     )
 
     return 'Jogo cadastrado com sucesso!'

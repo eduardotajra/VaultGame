@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 class Jogos(models.Model):
     titulo = models.CharField(max_length=100)
@@ -11,6 +12,7 @@ class Jogos(models.Model):
     idioma = models.CharField(max_length=100)
     categoria = models.CharField(max_length=100)
     imgUrl = models.CharField(max_length=1000)
+    lancamento = models.DateField(default = timezone.now)
 
     def __str__(self):
         return self.titulo

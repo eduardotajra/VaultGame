@@ -36,6 +36,7 @@ function Jogo() {
                     <div className={styles.comprar}>
                         <button className={styles.botaoCarrinho} type="submit">Adicionar ao Carrinho</button>
                         <button className={styles.botaoComprar} type="submit">Comprar</button>
+                        
                     </div>
                 </div>
         </div>

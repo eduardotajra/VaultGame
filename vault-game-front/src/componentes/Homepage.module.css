@@ -1,6 +1,6 @@
 .homepage{
     position: relative;
-    top: 6.5em;
+    top: 10em;
 }
 
 .cartas .card {
@@ -25,6 +25,7 @@
 h4 {
     text-align: left;
     margin-bottom: 1em;
+    margin-top:1em;
     color: indigo;
 }
 

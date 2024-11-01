@@ -1,165 +1,132 @@
+import React, { useEffect, useState } from "react";
+import { Link, Outlet, useNavigate } from "react-router-dom";
+import axios from "axios";
 import styles from "./Homepage.module.css";
-import Navbar from "./Navbar";
-import logo from "./img/logo.png";
-import footer from "./Footer.js";
-import minecraft from "./img/jogosImg/minecraft_cover.png";
-import reddead2 from "./img/jogosImg/red_dead_2_cover.jpg";
-import wukong from "./img/jogosImg/wukong_cover.png";
-import eldenring from "./img/jogosImg/elden_ring_cover.jpg";
-import silenthill2ps5 from "./img/jogosImg/silent_hill_2_ps5_cover.jpg";
-import tlou_ps5 from "./img/jogosImg/tlou_ps4_cover.jpg";
-import db_sz from "./img/jogosImg/db_sz_cover.jpg";
-import hitman3ps5 from "./img/jogosImg/hitman_ps5_cover.jpg";
-
+import banner from "./img/banner.jpg";
+import banner2 from "./img/banner2.jpg";
 import Footer from "./Footer";
 
 function Homepage() {
+  
+  const [jogosPC, setJogosPC] = useState([]);
+  const [jogosPlaystation, setJogosPlaystation] = useState([]);
+  const [jogosSwitch, setJogosSwitch] = useState([]);
+
+  useEffect(() => {
+    const fetchJogos = async (plataforma, setState) => {
+      try {
+        const response = await axios.get(`http://127.0.0.1:8000/api/jogos/getJogosPlataforma/${plataforma}`);
+        setState(response.data);
+      } catch (error) {
+        console.error("Erro ao buscar jogos:", error);
+      }
+    };
+
+    fetchJogos("PC", setJogosPC);
+    fetchJogos("Playstation", setJogosPlaystation);
+    fetchJogos("Switch", setJogosSwitch);
+  }, []);
+
   return (
     <>
       <style jsx>{`
         body {
           background-color: rgb(234, 234, 234) !important;
           background-image: none !important;
+          padding-right: 50%;
+          padding-left: 50%;
         }
         .carousel-indicators .active {
-          background-color: #4f46e5; /* Cor indigo-400 */
+          background-color: #4f46e5;
         }
         .card-img-top {
           height: 400px;
         }
       `}</style>
-
       <div className={styles.homepage}>
-        <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
-          <ol className="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img className="d-block w-100" src={logo} alt="First slide" />
-            </div>
-            <div className="carousel-item">
-              <img className="d-block w-100" src={logo} alt="Second slide" />
-            </div>
-            <div className="carousel-item">
-              <img className="d-block w-100" src={logo} alt="Third slide" />
-            </div>
+      <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+        <ol className="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img className="d-block w-100" src={banner} alt="First slide" />
           </div>
-          <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="sr-only">Previous</span>
-          </a>
-          <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="sr-only">Next</span>
-          </a>
+          <div className="carousel-item">
+            <img className="d-block w-100" src={banner2} alt="Second slide" />
+          </div>
+          <div className="carousel-item">
+            <img className="d-block w-100" src={banner} alt="Third slide" />
+          </div>
         </div>
+        <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span className="sr-only">Previous</span>
+        </a>
+        <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="sr-only">Next</span>
+        </a>
+      </div>
 
-        <h4>Ofertas de PC</h4>
-
+      <h4>Ofertas de PC</h4>
         <div className={styles.cartasContainer}>
           <div className={styles.cartas}>
-            <div className={`${styles.card} bg-light mb-3`} style={{ width: "18em" }}>
-              <img className="card-img-top img-fluid p-3" src={minecraft} alt="Minecraft" />
-              <div className="card-body">
-                <h5 className="text-secondary mb-3">Minecraft - PC (Microsoft Store)</h5>
-                <div className={styles.texto}>
-                  <p className="text-secondary"> R$ 129,99 </p>
+            {jogosPC.slice(0,4).map((jogo) => (
+              <div key={jogo.id} className={`${styles.card} bg-light mb-3`} style={{ width: "18em" }}>
+                <img className="card-img-top img-fluid p-3" src={jogo.imgUrl} alt={jogo.titulo} />
+                <div className="card-body">
+                  <h5 className="text-secondary mb-3">{jogo.titulo} - {jogo.plataforma}</h5>
+                  <p className="text-secondary">R$ {jogo.preco.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
+                  <p className="text-secondary">3x Sem Juros - R$ {jogo.preco.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
+                  <Link to={`/comprar/${jogo.id}`} className="btn btn-success">Compre Agora</Link>
                 </div>
-                <p className="text-secondary"> 3x Sem Juros - R$ 43,33 </p>   
-                <a href="#" className="btn btn-success">Compre Agora</a>
               </div>
-            </div>
-            <div className={`${styles.card} bg-light mb-3`} style={{ width: "18em" }}>
-              <img className="card-img-top img-fluid p-3" src={reddead2} alt="Red Dead Redemption 2" />
-              <div className="card-body">
-                <h5 className="text-secondary mb-3">Red Dead Redemption 2 - PC (Steam)</h5>
-                <div className={styles.texto}>
-                  <p className="text-secondary"> R$ 81,99 </p>
-                </div>
-                <p className="text-secondary"> 3x Sem Juros - R$ 27,33 </p>   
-                <a href="#" className="btn btn-success">Compre Agora</a>
-              </div>
-            </div>
-            <div className={`${styles.card} bg-light mb-3`} style={{ width: "18em" }}>
-              <img className="card-img-top img-fluid p-3" src={wukong} alt="Black Myth Wukong" />
-              <div className="card-body">
-                <h5 className="text-secondary mb-3">Black Myth Wukong <br/> PC (Steam)</h5>
-                <div className={styles.texto}>
-                  <p className="text-secondary"> R$ 245,50 </p>
-                </div>
-                <p className="text-secondary"> 3x Sem Juros - R$ 81,83 </p>   
-                <a href="#" className="btn btn-success">Compre Agora</a>
-              </div>
-            </div>
-            <div className={`${styles.card} bg-light mb-3`} style={{ width: "18em" }}>
-              <img className="card-img-top img-fluid p-3" src={eldenring} alt="Elden Ring" />
-              <div className="card-body">
-                <h5 className="text-secondary mb-3">Elden Ring Standard Edition - PC (Steam)</h5>
-                <div className={styles.texto}>
-                  <p className="text-secondary"> R$ 230,50 </p>
-                </div>
-                <p className="text-secondary"> 3x Sem Juros - R$ 76,83 </p>   
-                <a href="#" className="btn btn-success">Compre Agora</a>
-              </div>
-            </div>
-          </div>
-
-          <h4>Ofertas de Playstation</h4>
-
-          <div className={styles.cartas}>
-            <div className={`${styles.card} bg-light mb-3`} style={{ width: "18em" }}>
-              <img className="card-img-top img-fluid p-3" src={silenthill2ps5} alt="Silent Hill 2 Remake PS5" />
-              <div className="card-body">
-                <h5 className="text-secondary mb-3">Silent Hill 2 Remake <br/> PS5</h5>
-                <div className={styles.texto}>
-                  <p className="text-secondary"> R$ 330,99 </p>
-                </div>
-                <p className="text-secondary"> 3x Sem Juros - R$ 110,33 </p>   
-                <a href="#" className="btn btn-success">Compre Agora</a>
-              </div>
-            </div>
-            <div className={`${styles.card} bg-light mb-3`} style={{ width: "18em" }}>
-              <img className="card-img-top img-fluid p-3" src={tlou_ps5} alt="The Last Of Us 2" />
-              <div className="card-body">
-                <h5 className="text-secondary mb-3">The Last Of Us - Part 2 <br/> PS4</h5>
-                <div className={styles.texto}>
-                  <p className="text-secondary"> R$ 100,00 </p>
-                </div>
-                <p className="text-secondary"> 3x Sem Juros - R$ 33,33 </p>   
-                <a href="#" className="btn btn-success">Compre Agora</a>
-              </div>
-            </div>
-            <div className={`${styles.card} bg-light mb-3`} style={{ width: "18em" }}>
-              <img className="card-img-top img-fluid p-3" src={hitman3ps5} alt="Hitman PS5" />
-              <div className="card-body">
-                <h5 className="text-secondary mb-3">Hitman World Of Assassination - PS5</h5>
-                <div className={styles.texto}>
-                  <p className="text-secondary"> R$ 120,00 </p>
-                </div>
-                <p className="text-secondary"> 3x Sem Juros - R$ 40,00 </p>   
-                <a href="#" className="btn btn-success">Compre Agora</a>
-              </div>
-            </div>
-            <div className={`${styles.card} bg-light mb-3`} style={{ width: "18em" }}>
-              <img className="card-img-top img-fluid p-3" src={db_sz} alt="Dragon Ball Sparking! Zero" />
-              <div className="card-body">
-                <h5 className="text-secondary mb-3">Dragon Ball Sparking! Zero - PS5</h5>
-                <div className={styles.texto}>
-                  <p className="text-secondary"> R$ 330,99 </p>
-                </div>
-                <p className="text-secondary"> 3x Sem Juros - R$ 110,33 </p>   
-                <a href="#" className="btn btn-success">Compre Agora</a>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
+
+      <h4>Ofertas de Playstation</h4>
+      <div className={styles.cartasContainer}>
+        <div className={styles.cartas}>
+          {jogosPlaystation.slice(0,4).map((jogo) => (
+            <div key={jogo.id} className={`${styles.card} bg-light mb-3`} style={{ width: "18em" }}>
+              <img className="card-img-top img-fluid p-3" src={jogo.imgUrl} alt={jogo.titulo} />
+              <div className="card-body">
+                <h5 className="text-secondary mb-3">{jogo.titulo} - {jogo.plataforma}</h5>
+                <p className="text-secondary">R$ {jogo.preco.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
+                <p className="text-secondary">3x Sem Juros - R$ {jogo.preco.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
+                <Link to={`/comprar/${jogo.id}`} className="btn btn-success">Compre Agora</Link>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-      
+
+      <h4>Ofertas de Nintendo Switch</h4>
+      <div className={styles.cartasContainer}>
+        <div className={styles.cartas}>
+          {jogosSwitch.slice(0,4).map((jogo) => (
+            <div key={jogo.id} className={`${styles.card} bg-light mb-3`} style={{ width: "18em" }}>
+              <img className="card-img-top img-fluid p-3" src={jogo.imgUrl} alt={jogo.titulo} />
+              <div className="card-body">
+                <h5 className="text-secondary mb-3">{jogo.titulo} - {jogo.plataforma}</h5>
+                <p className="text-secondary">R$ {jogo.preco.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
+                <p className="text-secondary">3x Sem Juros - R$ {jogo.preco.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
+                <Link to={`/comprar/${jogo.id}`} className="btn btn-success">Compre Agora</Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+
+      </div>
+
       <footer>
-      <Footer />
+        <Footer />
       </footer>
     </>
   );
