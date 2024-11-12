@@ -61,7 +61,7 @@ WSGI_APPLICATION = 'djangoAPI.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'vault_game',
+        'NAME': 'vault_game1',
         'USER': 'root',
         'PASSWORD': '1234',
         'HOST': 'localhost',

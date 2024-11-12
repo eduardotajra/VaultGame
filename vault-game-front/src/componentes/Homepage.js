@@ -24,7 +24,7 @@ function Homepage() {
 
     fetchJogos("PC", setJogosPC);
     fetchJogos("Playstation", setJogosPlaystation);
-    fetchJogos("Switch", setJogosSwitch);
+    fetchJogos("Nintendo Switch", setJogosSwitch);
   }, []);
 
   return (

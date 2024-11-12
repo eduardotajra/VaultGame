@@ -1,4 +1,5 @@
 from ninja import Router
+from django.http import JsonResponse
 from .models import Jogos
 from .schemas import JogosSchema, RegistroJogos
 from typing import List
@@ -34,10 +35,11 @@ def registrarJogo(request, novoJogo: RegistroJogos):
     jogo_encontrado = Jogos.objects.filter(titulo=novoJogo.titulo).first()
 
     if jogo_encontrado:
-        return jogos_router.create_response(
-            request, 'Esse jogo já está cadastrado.', status=400
+        return JsonResponse(
+            {"detail": "Jogo já está cadastrado"},
+            status=400
         )
-
+    
     Jogos.objects.create(
         titulo=novoJogo.titulo,
         descricao=novoJogo.descricao,
@@ -45,10 +47,12 @@ def registrarJogo(request, novoJogo: RegistroJogos):
         avaliacao=novoJogo.avaliacao,
         promocao=novoJogo.promocao,
         publisher=novoJogo.publisher,
-        plataforma=novoJogo.plataforma, 
+        plataforma=novoJogo.plataforma,
         idioma=novoJogo.idioma,
+        idiomaAudio=novoJogo.idiomaAudio,
         categoria=novoJogo.categoria,
         imgUrl=novoJogo.imgUrl,
+        imgJogo=novoJogo.imgJogo,
         lancamento = novoJogo.lancamento
     )
 
