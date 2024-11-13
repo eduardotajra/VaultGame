@@ -4,6 +4,25 @@ import Login from "./Login";
 import Cadastro from "./Cadastro";
 import styles from "./Troca.module.css";
 
+
+<style jsx>{`
+  body {
+    color: white;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./img/background-img.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    min-height: 100vh;
+  }
+`}</style>
+
 function Troca() {
 
   const location = useLocation(); // hook de navegacao

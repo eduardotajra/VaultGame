@@ -12,6 +12,8 @@ import ofertas from "./img/navBarImg/ofertas.png";
 import playstation from "./img/navBarImg/playstation.png";
 import xbox from "./img/navBarImg/xbox.png";
 
+
+
 function Navbar() {
   // Efeito de ScrollReveal
   useEffect(() => {
@@ -35,7 +37,7 @@ function Navbar() {
 
   return (
     <>
-      <header id="page-header">
+      <header id="page-header" className={styles.pageHeader}>
         <div className={styles.interface}>
           <div className={styles.logo}>
             <Link to="/">
@@ -97,12 +99,12 @@ function Navbar() {
 
             <div className={styles.loginIcone}>
               <button className={styles.loginbotao}>
-                <img src={sigIn} alt="Logo" className="navbar-logo" />
-                <p> Entrar </p>
+                <img src={sigIn} alt="Logo" />
+                <div className={styles.textLogo}><p> Entrar </p></div>
               </button>
 
               <div className={styles.dropdown}>
-                <ul className={styles.ulDropdown}>
+                <ul>
                   <li>
                     {/* vai mandar login como "login" */}
                     <button onClick={() => login("login")}>Fazer Login</button> 
@@ -123,3 +125,4 @@ function Navbar() {
 }
 
 export default Navbar;
+

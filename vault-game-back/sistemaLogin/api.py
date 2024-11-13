@@ -13,14 +13,14 @@ fui_router = Router()
 
 @fui_router.get('protegida/', auth = JWTAuth())
 def fui(request):
-    return JsonResponse({"msg":"Fui!"})
+    return JsonResponse({"msg":"Logado com Sucesso!"})
 
 @login_router.post('login/', auth=None)
 def logar(request, login: LoginUsuario):
     user = modelUsuario.objects.filter(username=login.username).first()
     if user and user.check_password(login.password):
         expiration_time = datetime.now() + timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE)
-        print(f"VAI EXPIRAR EMMMMMMM: {expiration_time}")
+        print(f"Token expirando em: {expiration_time}")
 
         payload = {
             "user": user.username,

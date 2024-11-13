@@ -1,5 +1,7 @@
 /* Estilos Básicos do Header */
-header {
+  .pageHeader{
+    display: flex;
+    justify-content: center;
     position: fixed;
     top: 0;
     width: 100%;
@@ -7,9 +9,7 @@ header {
     background-color: rgba(96, 31, 109, 0.5);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s, height 0.3s, padding 0.3s;
-    /* padding: 0.1em 4%; */
-    padding-top: 1em;
-    height: 70px;
+    height: 6.5em;
     right: 0;
   }
   
@@ -41,10 +41,8 @@ header {
   .interface {
     display: flex;
     align-items: center;
-    /* max-width: 1280px; */
-    margin: 0 auto;
-    width: 85%;
-    justify-content: space-between;
+    width: 100%;
+    justify-content: space-around;
   }
 
   
@@ -68,7 +66,7 @@ header {
     text-decoration: none;
     color: #ffffff;
     font-family: "Montserrat", sans-serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
     transition: color 0.3s, transform 0.3s;
   }
   
@@ -133,6 +131,7 @@ header {
     position: relative;
     opacity: 1;
     color: aliceblue;
+
     width: 100px;
     height: 50px;
     transition: transform 0.3s;
@@ -164,15 +163,21 @@ header {
   position: relative;
 }
 
+.textLogo{
+  height: 1.5em;
+}
+
 .loginbotao {
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   cursor: pointer;
-  padding-right: 20px;
-  padding-left: 20px;
-  padding: 14%;
   font-size: 15px;
   color: purple;
   background-color: white;
   border-radius: 10px;
+  width: 5.5em;
 }
 
 .dropdown li::marker {
@@ -191,11 +196,10 @@ header {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   position: absolute;
-  background-color: none;
-  width: 7.1em;
+  width: 8em;
   justify-content: space-between;
   top: 100%;
-  right: -25%;
+  right: 0%;
   border: 0;
   max-width: 6.9em;
   text-align: center;
@@ -214,7 +218,6 @@ header {
 .dropdown li button:hover{
   cursor: pointer;
   z-index: 9001;
-  width: 7.1em;
   background-color: #EEEEEE;
   border: 8px solid #EEEEEE;
 }
@@ -240,7 +243,7 @@ header {
 }
 
 .rightNav{
-  width: 7.5em;
+  width: 10em;
   display: flex;
   justify-content: space-between;
   align-items: center;
