@@ -20,7 +20,7 @@ function Footer() {
             </div>
         </div>
         <div className={styles.footerBottom}>
-            <p>2024 - VaultGame. Todos os direitos reservados.</p>
+            <p>© 2024 VaultGame - Todos os direitos reservados.</p>
         </div>
     </>
     );
