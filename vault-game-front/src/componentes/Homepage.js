@@ -44,7 +44,7 @@ function Homepage() {
         }
       `}</style>
       <div className={styles.homepage}>
-      <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol className="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -70,24 +70,27 @@ function Homepage() {
           <span className="sr-only">Next</span>
         </a>
       </div>
-
-      <h4>Ofertas de PC</h4>
-        <div className={styles.cartasContainer}>
-          <div className={styles.cartas}>
-            {jogosPC.slice(0,4).map((jogo) => (
-              <div key={jogo.id} className={`${styles.card} bg-light mb-3`} style={{ width: "18em" }}>
-                <img className="card-img-top img-fluid p-3" src={jogo.imgUrl} alt={jogo.titulo} />
-                <div className="card-body">
-                  <h5 className="text-secondary mb-3">{jogo.titulo} - {jogo.plataforma}</h5>
-                  <p className="text-secondary">R$ {jogo.preco.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
-                  <p className="text-secondary">3x Sem Juros - R$ {jogo.preco.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
-                  <Link to={`/comprar/${jogo.id}`} className="btn btn-success">Compre Agora</Link>
+      
+      <div className={styles.cardCarrossel}>
+        <h4>Ofertas de PC</h4>
+          <div className={styles.cartasContainer}>
+            <div className={styles.cartas}>
+              {jogosPC.slice(0,4).map((jogo) => (
+                <div key={jogo.id} className={`${styles.card} bg-light mb-3`} style={{ width: "18em" }}>
+                  <img className="card-img-top img-fluid p-3" src={jogo.imgUrl} alt={jogo.titulo} />
+                  <div className={styles.cartacorpo}>
+                    <div className="info">
+                      <h5 className="text-secondary mb-3">{jogo.titulo} - {jogo.plataforma}</h5>
+                      <p className="text-secondary">R$ {jogo.preco.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
+                      <p className="text-secondary">3x Sem Juros - R$ {jogo.preco.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
+                    </div>
+                    <Link to={`/comprar/${jogo.id}`} className="btn btn-success">Compre Agora</Link>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-
       <h4>Ofertas de Playstation</h4>
       <div className={styles.cartasContainer}>
         <div className={styles.cartas}>

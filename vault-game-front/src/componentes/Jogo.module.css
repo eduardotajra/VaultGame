@@ -1,6 +1,6 @@
 .jogo{
     display: flex;
-    width: 60em;
+    width: 70em;
     background-color: rgb(234, 234, 234);
     padding: 10px;
     border-radius: 5px;
@@ -19,14 +19,12 @@
 }
 
 .imgFrame{
+    background-color: rgb(216, 216, 216);
     display: flex;
     width: fit-content;
+    height: fit-content;
     border: 5px solid white;
     border-radius: 8px;
-}
-
-.imgFrame img {
-    width: 500px;
 }
 
 .nomeDesc {

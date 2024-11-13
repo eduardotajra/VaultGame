@@ -3,6 +3,10 @@
     top: 10em;
 }
 
+.cardCarrossel {
+    margin-top: 1em;
+}
+
 .cartas .card {
     transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -16,6 +20,11 @@
     position: relative;
     display: flex;
     justify-content: space-between;
+}
+
+.cartas img {
+    width: min(500px, 100%);
+    object-fit: contain;
 }
 
 .texto {

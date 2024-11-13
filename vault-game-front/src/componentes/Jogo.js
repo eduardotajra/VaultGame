@@ -31,7 +31,7 @@ function Jogo() {
             
             <div className={styles.jogo}>
                 <div className={styles.imgFrame}>
-                    <img src={`${jogo.imgUrl}`} alt={jogo.titulo} />
+                <iframe width="640" height="360" src={jogo.imgJogo} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"  allow="fullscreen" ></iframe>
                 </div>
                 <div className={styles.box}>
                     <div className={styles.nomeDesc}>
@@ -78,7 +78,9 @@ function Jogo() {
                     </div>
                 </div>
             </div>
-
+            
+            
+            
             <footer>
                 <Footer />
             </footer>
