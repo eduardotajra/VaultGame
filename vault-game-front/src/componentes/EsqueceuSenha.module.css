@@ -13,6 +13,7 @@
     margin-bottom: 0.5em;
 }
 .box p{
+    margin-bottom: 0 !important;
     font-size: 12px;
 }
 .paragrafo{
@@ -24,7 +25,6 @@
     display: inline-block;
 }
 
-    
 .textoRetornar:hover {
     text-decoration: underline;
     text-decoration-color: rgb(255, 255, 255);
@@ -77,4 +77,8 @@
 
 .link{
     cursor: pointer;
+}
+
+h3 {
+    font-size: 1.17em;
 }

@@ -10,6 +10,7 @@
   transition: box-shadow 0.3s, height 0.3s, padding 0.3s;
   height: 6.5em;
   right: 0;
+  filter: drop-shadow(0 0 0.3rem black);
 }
 
 header.scrolled {
@@ -144,6 +145,9 @@ header a:hover {
   width: 2.5em;
   justify-content: end;
 }
+.compras:hover{
+  transform: scale(1.1);
+}
 
 .compras img{
   position: relative;
@@ -195,12 +199,12 @@ padding: 0.7em;
 padding-top: 0.5em;
 padding-bottom: 0.5em;
 position: absolute;
-width: 8em;
+width: 8.3em;
 justify-content: space-between;
 top: 100%;
 right: 0%;
 border: 0;
-max-width: 6.9em;
+/* max-width: 6.9em; */
 text-align: center;
 background-color: white;
 border-radius: 5px;

@@ -3,13 +3,14 @@
     width: 70em;
     background-color: rgb(234, 234, 234);
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     height: 25em;
     color: rgb(237, 237, 237);
     color: black
 }
 
 .box {
+    border-radius: 10px;
     margin: auto;
     padding: 15px;
     height: 90%;
@@ -98,7 +99,7 @@ h4 {
     margin-top: 20px;
     background-color: rgb(240, 240, 240);
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .infoBox {

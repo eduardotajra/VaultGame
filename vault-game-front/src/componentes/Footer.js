@@ -10,8 +10,9 @@ function Footer() {
                     <h3>Criadores:</h3>
                     <p>
                     <a href="https://github.com/eduardotajra" target="blank_">Eduardo Tajra</a>,
-                    <a href="https://github.com/lucas-twygz" target="blank_"> Lucas Melo</a> e
-                    <a href="https://github.com/pucciNatan" target="blank_"> Natan Pucci</a></p>
+                    <a href="https://github.com/lucas-twygz" target="blank_"> Lucas Melo,</a> 
+                    <a href="https://github.com/pucciNatan" target="blank_"> Natan Pucci</a> e
+                    <a href="https://github.com/pucciNatan" target="blank_"> Alexandre Franco</a></p>
                     
                 </div>
                 <div className={styles.footerSection}>
