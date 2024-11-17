@@ -23,7 +23,7 @@ def logar(request, login: LoginUsuario):
         print(f"Token expirando em: {expiration_time}")
 
         payload = {
-            "user": user.username,
+            "user_id": user.id,
             "exp": int(expiration_time.timestamp())
         }
 
