@@ -5,6 +5,7 @@ from .models import Carrinho
 from .schemas import CarrinhoSchema
 from django.db import transaction
 from sistemaLogin.auth import JWTAuth
+from decimal import Decimal
 
 carrinho_router = Router()
 
@@ -19,13 +20,13 @@ def adicionarAoCarrinho(request, id: int):
         with transaction.atomic():
             carrinho.jogos.add(jogo)
             carrinho.qtdProduto = carrinho.jogos.count()
-            carrinho.precoTotal += jogo.preco
+            carrinho.precoTotal += Decimal(jogo.preco)
             carrinho.save()
         return {
             'msg': 'Jogo adicionado com sucesso!',
             'carrinho': {
                 'qtdProduto': carrinho.qtdProduto,
-                'precoTotal': carrinho.precoTotal
+                'precoTotal': float(carrinho.precoTotal)
             }
         }
     return {'msg': 'O jogo já está no carrinho.'}
@@ -44,14 +45,14 @@ def deletarDoCarrinho(request, id: int):
         with transaction.atomic():
             carrinho.jogos.remove(jogo)
             carrinho.qtdProduto = carrinho.jogos.count()
-            carrinho.precoTotal -= jogo.preco
-            carrinho.precoTotal = max(carrinho.precoTotal, 0)
+            carrinho.precoTotal -= Decimal(jogo.preco)
+            carrinho.precoTotal = max(carrinho.precoTotal, Decimal('0.00'))
             carrinho.save()
         return {
             'msg': 'Jogo removido do carrinho com sucesso.',
             'carrinho': {
                 'qtdProduto': carrinho.qtdProduto,
-                'precoTotal': carrinho.precoTotal
+                'precoTotal': float(carrinho.precoTotal)
             }
         }
     return {'msg': 'O jogo não está no carrinho.'}

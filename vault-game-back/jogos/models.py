@@ -4,7 +4,7 @@ from django.utils import timezone
 class Jogos(models.Model):
     titulo = models.CharField(max_length=100)
     descricao = models.CharField(max_length=1000)
-    preco = models.FloatField()
+    preco = models.DecimalField(max_digits=10, decimal_places=2)
     avaliacao = models.CharField(max_length=100)
     promocao = models.CharField(max_length=3)
     publisher = models.CharField(max_length=100)

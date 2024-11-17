@@ -6,7 +6,8 @@
     border-radius: 10px;
     height: 25em;
     color: rgb(237, 237, 237);
-    color: black
+    color: black;
+    margin-top: 8em;
 }
 
 .box {
