@@ -34,10 +34,12 @@ function Jogo() {
                 <iframe width="640" height="360" src={jogo.imgJogo} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"  allow="fullscreen" ></iframe>
                 </div>
                 <div className={styles.box}>
-                    <div className={styles.nomeDesc}>
-                        <h2>{jogo.titulo}</h2>
-                        <p>{jogo.descricao}</p>
-                    </div>
+                        <div className={styles.tituloEPlataforma}> 
+                            <h2>{jogo.titulo}</h2>
+                            <h6>{jogo.plataforma}</h6>
+                        </div>             
+                        <p className={styles.desc}> {jogo.descricao} </p>
+                      
 
                     <div className={styles.preco}> 
                         <h3><strong>R${jogo.preco.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</strong></h3>
