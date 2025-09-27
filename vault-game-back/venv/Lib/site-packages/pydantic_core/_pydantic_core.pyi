@@ -1,5 +1,4 @@
 import datetime
-from collections.abc import Mapping
 from typing import Any, Callable, Generic, Literal, TypeVar, final
 
 from _typeshed import SupportsAllComparisons
@@ -238,7 +237,7 @@ class SchemaValidator:
             `None` if the schema has no default value, otherwise a [`Some`][pydantic_core.Some] containing the default.
         """
 
-_IncEx: TypeAlias = set[int] | set[str] | Mapping[int, _IncEx | Literal[True]] | Mapping[str, _IncEx | Literal[True]]
+_IncEx: TypeAlias = set[int] | set[str] | dict[int, _IncEx | bool] | dict[str, _IncEx | bool]
 
 @final
 class SchemaSerializer:

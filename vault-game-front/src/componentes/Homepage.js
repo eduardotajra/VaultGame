@@ -44,11 +44,10 @@ function Homepage() {
         }
       `}</style>
       <div className={styles.homepage}>
-      <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol className="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
         <div className="carousel-inner">
           <div className="carousel-item active">
@@ -56,9 +55,6 @@ function Homepage() {
           </div>
           <div className="carousel-item">
             <img className="d-block w-100" src={banner2} alt="Second slide" />
-          </div>
-          <div className="carousel-item">
-            <img className="d-block w-100" src={banner} alt="Third slide" />
           </div>
         </div>
         <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -70,37 +66,46 @@ function Homepage() {
           <span className="sr-only">Next</span>
         </a>
       </div>
+      
+      <div className={styles.cardCarrossel}>
+        <h4>Ofertas de PC</h4>
+          <div className={styles.cartasContainer}>
+            <div className={styles.cartas}>
+              {jogosPC.slice(0,4).map((jogo) => (
+                <div key={jogo.id} className={`${styles.card} bg-light`} style={{ width: "18em" }}>
+                  <Link to={`/comprar/${jogo.id}`}>
+                    <img className="card-img-top img-fluid p-3" src={jogo.imgUrl} alt={jogo.titulo} />
+                  </Link>
+                  <div className={styles.cartacorpo}>
 
-      <h4>Ofertas de PC</h4>
-        <div className={styles.cartasContainer}>
-          <div className={styles.cartas}>
-            {jogosPC.slice(0,4).map((jogo) => (
-              <div key={jogo.id} className={`${styles.card} bg-light mb-3`} style={{ width: "18em" }}>
-                <img className="card-img-top img-fluid p-3" src={jogo.imgUrl} alt={jogo.titulo} />
-                <div className="card-body">
-                  <h5 className="text-secondary mb-3">{jogo.titulo} - {jogo.plataforma}</h5>
-                  <p className="text-secondary">R$ {jogo.preco.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
-                  <p className="text-secondary">3x Sem Juros - R$ {jogo.preco.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
-                  <Link to={`/comprar/${jogo.id}`} className="btn btn-success">Compre Agora</Link>
+                      <h5 className="text-secondary mb-3 p-1">{jogo.titulo} - {jogo.plataforma}</h5>
+                      <p className="text-secondary">R$ {jogo.preco.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
+                      <p className="text-secondary">3x Sem Juros - R$ {(jogo.preco / 3).toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+
+                    </div>
+                    <Link to={`/comprar/${jogo.id}`} className="btn btn-success mb-4">Compre Agora</Link>         
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-
       <h4>Ofertas de Playstation</h4>
       <div className={styles.cartasContainer}>
         <div className={styles.cartas}>
           {jogosPlaystation.slice(0,4).map((jogo) => (
-            <div key={jogo.id} className={`${styles.card} bg-light mb-3`} style={{ width: "18em" }}>
+          <div key={jogo.id} className={`${styles.card} bg-light m-1`} style={{ width: "18em" }}>
+            <Link to={`/comprar/${jogo.id}`}>
               <img className="card-img-top img-fluid p-3" src={jogo.imgUrl} alt={jogo.titulo} />
-              <div className="card-body">
-                <h5 className="text-secondary mb-3">{jogo.titulo} - {jogo.plataforma}</h5>
+            </Link>
+            <div className={styles.cartacorpo}>
+
+                <h5 className="text-secondary mb-3 p-1">{jogo.titulo} - {jogo.plataforma}</h5>
                 <p className="text-secondary">R$ {jogo.preco.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
-                <p className="text-secondary">3x Sem Juros - R$ {jogo.preco.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
-                <Link to={`/comprar/${jogo.id}`} className="btn btn-success">Compre Agora</Link>
+                <p className="text-secondary">3x Sem Juros - R$ {(jogo.preco / 3).toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+
               </div>
-            </div>
+              <Link to={`/comprar/${jogo.id}`} className="btn btn-success mb-4">Compre Agora</Link>         
+          </div>
           ))}
         </div>
       </div>
@@ -109,15 +114,19 @@ function Homepage() {
       <div className={styles.cartasContainer}>
         <div className={styles.cartas}>
           {jogosSwitch.slice(0,4).map((jogo) => (
-            <div key={jogo.id} className={`${styles.card} bg-light mb-3`} style={{ width: "18em" }}>
+            <div key={jogo.id} className={`${styles.card} bg-light`} style={{ width: "18em" }}>
+            <Link to={`/comprar/${jogo.id}`}>
               <img className="card-img-top img-fluid p-3" src={jogo.imgUrl} alt={jogo.titulo} />
-              <div className="card-body">
-                <h5 className="text-secondary mb-3">{jogo.titulo} - {jogo.plataforma}</h5>
+            </Link>
+            <div className={styles.cartacorpo}>
+
+                <h5 className="text-secondary mb-3 p-1">{jogo.titulo} - {jogo.plataforma}</h5>
                 <p className="text-secondary">R$ {jogo.preco.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
-                <p className="text-secondary">3x Sem Juros - R$ {jogo.preco.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
-                <Link to={`/comprar/${jogo.id}`} className="btn btn-success">Compre Agora</Link>
+                <p className="text-secondary">3x Sem Juros - R$ {(jogo.preco / 3).toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+
               </div>
-            </div>
+              <Link to={`/comprar/${jogo.id}`} className="btn btn-success mb-4">Compre Agora</Link>         
+          </div>
           ))}
         </div>
       </div>

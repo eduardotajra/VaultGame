@@ -1,6 +1,10 @@
 .homepage{
     position: relative;
-    top: 10em;
+    top: 8em;
+}
+
+.cardCarrossel {
+    margin-top: 1em;
 }
 
 .cartas .card {
@@ -16,6 +20,13 @@
     position: relative;
     display: flex;
     justify-content: space-between;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.cartas img {
+    width: min(500px, 100%);
+    object-fit: contain;
 }
 
 .texto {
@@ -29,3 +40,7 @@ h4 {
     color: indigo;
 }
 
+.cartacorpo{
+    height: 10em;
+
+}

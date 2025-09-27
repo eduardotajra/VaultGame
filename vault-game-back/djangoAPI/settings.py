@@ -17,7 +17,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sistemaLogin',
-    'jogos'
+    'jogos',
+    'carrinho'
 ]
 
 MIDDLEWARE = [
@@ -63,7 +64,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'vault_game1',
         'USER': 'root',
-        'PASSWORD': '1234',
+        'PASSWORD': '9610',
         'HOST': 'localhost',
         'PORT': '3306',
     }
@@ -100,5 +101,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SECRET_KEY_JWT = "muitoSecretaMds"
 
-ACCESS_TOKEN_EXPIRE = 1
+ACCESS_TOKEN_EXPIRE = 30
 REFRESH_TOKEN_EXPIRE_DAYS = 7
