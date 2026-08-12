@@ -1,0 +1,8 @@
+# Normalizacao de fim de linha
+* text=auto
+
+# Dependencias e artefatos nao contam como codigo do projeto
+vault-game-back/venv/**   linguist-vendored
+**/__pycache__/**         linguist-generated
+*.pyc                     linguist-generated
+package-lock.json         linguist-generated
